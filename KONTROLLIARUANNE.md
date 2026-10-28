@@ -1,27 +1,25 @@
-# Malenurga versiooni 1.1 kontrolliaruanne
+# Malenurga versiooni 1.2 kontrolliaruanne
 
 Kontrollimise kuupäev: 28.10.2026. Kontrollid viis läbi Codex automatiseeritud skriptide ja brauseriga. Tegemist ei ole maleõpetaja eksperdihinnanguga.
 
-## Versiooni 1.1 muudatused ja uued kontrollid
+## Versiooni 1.2 tagasisidevormi kontrollid
 
-Muudeti lähtefaile `lahtekood/app.js` ja `lahtekood/style.css`; nende põhjal ehitati uuesti `Malenurk.html`. Täiendati olemasolevat `test-browser.cjs` ning lisati `test-features.cjs`. Ülesannete lähteandmed, nende valideerija ja chess.js-i reegliteek jäid muutmata.
+Muudeti `lahtekood/app.js` ja `lahtekood/style.css`, lisati `test-feedback.cjs`, kohandati olemasolevaid brauseriteste ning ehitati uuesti `Malenurk.html`. Maleülesannete lähteandmed, valideerija ja reegliteek jäid muutmata.
 
-Kõik järgmised uued kontrollid läbisid päris Chrome'is:
+Chrome'i brauseris kontrolliti järgmisi kasutusvooge:
 
-- Viis menüüvalikut avavad vastava vaate ja aktiivne valik on tähistatud. Avalehe nupud avavad sama harjutuste valiku ja juhiste vaate nagu menüü.
-- Treeneri parooliväli on maskeeritud. Tühi, vale, tühikutest koosnev ja õige parool koos lisatühikuga ei ava töölauda. Täpselt `male2026` avab vaate nii nupu kui Enter-klahviga. Õige parool ei ilmu lehe tekstis ega veateadetes.
-- Treeneri vaate renderdus, otsene avamine ning üksikülesande/komplekti käivitamise tegevused järgivad lukku. Vaadete vahel liikumine säilitab ligipääsu sama lehe sees. Väljumine ja lehe värskendamine lukustavad vaate.
-- Tagasiside on ligipääsetav ilma paroolita. Vormis on täpselt kaheksa skaalaküsimust, 40 raadionuppu ja neli kohustuslikku tekstivälja. Kõik 12 küsimuse teksti ja numbrit vastavad lähteülesandele. Autori nimi ja mailto-kontakt on õiged.
-- Kõik kolm vorminuppu kontrollivad puuduvaid vastuseid. Tühikutest koosnev tekst ei sobi, eestikeelne teade kuvatakse küsimuse juures ja vastav väli saab fookuse. Juba sisestatud vastused säilivad ka menüüvaadete vahel.
-- TXT ja JSON sisaldavad kõiki küsimusi ning täielikke vastuseid, sealhulgas täpitähti, reavahetusi, HTML-erimärke ja üle 4000 märgi pikkust tekstivastust. Treeneri sobivushinnang sisaldub ekspordis. Tegelikud TXT- ja JSON-failid laaditi alla ja loeti kettalt tagasi.
-- Saatmisnupp loob enne meilitoimingut TXT-faili. Kontrolliti mailto-aadressi `rasmus.pallum@gmail.com`, teemat „Malenurga tagasiside“, käsitsi manustamise ja saatmise juhist ning olukorda, kus meiliprogrammi avamine annab vea. Eraldi allalaadimisnupud jäävad kasutatavaks.
-- Kõik kaheksa vaadet mahuvad kuuele ekraanilaiusele 390–1440 pikslit. Kontrolliti ka tahvelarvuti puutesisendit ning võrgupäringute ja JavaScripti vigade puudumist.
+- Vormis on kaheksa kohustuslikku 1–5 skaalaküsimust ning neli vabatahtlikku tekstivälja. Iga küsimuse 1–8 puuduv vastus eraldi takistab salvestamist, kuvab eestikeelse teate ja viib fookuse õigesse välja. Küsimused 9–12 võivad jääda tühjaks või sisaldada ainult tühikuid.
+- Kinnitamisel toimub päris sessionStorage'i kirjutus ja tagasilugemine. Alles selle õnnestumisel muutub tekst „Saadan oma tagasiside“ tekstiks „Hinnang salvestatud“ ning kuvatakse nõutud tänuteade. Kinnitamine ei loo Blob-faili, ei käivita allalaadimist ega ava mailto-linki.
+- Vastused taastuvad pärast lehe värskendamist sama vahelehe sees. Sõltumatus uues vahelehes pole hinnang kinnitatud. Vaadete vahel jääb alles ka mustand; salvestamata mustandi värskendamisel taastub eelmine kinnitatud hinnang.
+- Muutmisel kuvatakse „Muudatused salvestamata“, kinnitatud olek ja allalaadimisnupud peidetakse ning eksport on ka kontrolleri kaudu blokeeritud. Uuesti salvestamine kinnitab uue vastusekomplekti.
+- Sunnitud salvestusmahu veal, kirjutust eiraval salvestusel, blokeeritud sessionStorage'il ja vigasel varasemal JSON-il ei kuvata ekslikku edu. Rakendus jääb kasutatavaks, vastused säilivad vormis ning õnnestuv korduskatse taastab kinnitatud oleku.
+- Eraldi TXT- ja CSV-nupud on nähtavad pärast kinnitamist ning käivitavad just valitud faili allalaadimise. Vormi avamine, kinnitamine, vaatevahetus ja lehe värskendamine ei käivita allalaadimisi.
+- Mõlemas failis on kõik 12 küsimust ja salvestatud vastused. CSV loeti testis sõltumatu parseriga tagasi: täpitähed, semikoolon, koma, jutumärgid, reavahetused, tühjad vastused ning üle 4000 märgi pikkune tekst säilisid täpselt. Tegelikud failid salvestati kettale ja loeti tagasi; kontrolliti UTF-8 BOM-i ja treeneri sobivushinnangu kaasamist.
+- Praegune kujundus säilib. Kõik kaheksa vaadet, sh kinnitatud tagasiside koos tänuteate ja allalaadimisnuppudega, mahuvad kuuele ekraanilaiusele 390–1440 pikslit. Lisaks kontrolliti tahvelarvuti puutesisendit.
 
-Käsud: `node lahtekood/validate.cjs`, `node lahtekood/build.cjs` ja `node lahtekood/test-browser.cjs`. Viimane läbis kokku **19 kontrollrühma**; tulemused on `lahtekood/browser-results.json`. Windowsi käivitusliivakast katkestas ka minimaalse proovifaili allalaadimise. Kogu brauseritest läbis väljaspool seda liivakasti eraldi ajutises brauseriprofiilis, endiselt võrguühenduseta.
+`node lahtekood/validate.cjs` ja `node lahtekood/build.cjs` läbisid. `node lahtekood/test-browser.cjs` läbis kokku **23 kontrollrühma**. Tulemused on failis `lahtekood/browser-results.json`. Test käivitati võrguühenduseta eraldi ajutises Chrome'i profiilis; tegelike failiallalaadimiste kontroll nõudis käivitamist väljaspool Windowsi piiratud liivakasti.
 
-Testis peatati välise meiliprogrammi tegelik avamine ja kirja ei saadetud. Mailto-võimaluse toimimine päris kasutaja seadmes sõltub tema seadistatud meiliprogrammist; fail tuleb kasutajal ise manustada ja kiri ise saata. See ei ole serveripõhine kirjasaatmine.
-
-Avalehe, harjutuste valiku, treeneri sisenemise, juhiste ning tagasiside arvuti-, tahvli- ja telefonipaigutuste kuvatõmmised vaadati visuaalselt üle. Füüsilise iPadi või Android-tahvli kasutuskatset ega päris õpetaja eksperdihinnangut ei tehtud.
+Kontrollid ei ole sõltumatu õpetaja eksperdihinnang. SessionStorage'i käitumist kohaliku HTML-iga kontrolliti Chrome'is; teiste brauserite privaatsusseaded võivad salvestamise keelata. Veateate ja vastuste säilitamise haru on testitud. Harjutustulemusi ja treeneri avatud ligipääsu ei salvestata ning lehe värskendamine lukustab treeneri vaate endiselt uuesti.
 
 
 ## Kontrollitav tulemus
@@ -69,7 +67,7 @@ Test tehti kohalikust `file:`-aadressist päris Chrome'i brauseris, Playwrightig
 11. Muundumise tühistamine ja vale malendi valimine; alamuundamise ülesandes ei aktsepteerita lipuks muundamist ratsu asemel.
 12. Malelaua nooleklahvid ja sisestusklahv ning malendi tegelik lohistamine.
 13. Treeneri filtrid, ülesande rea avamine, seisu ja lahenduse näitamine, sobivushinnang ning üksikülesande ja filtreeritud komplekti alustamine.
-14. Kaheksa skaalaküsimuse ja nelja avatud küsimuse täitmine; TXT- ja JSON-faili allalaadimine ning sisu kontroll. Treeneri sobivushinnang sisaldub failis. Vastused säilivad lehe vaadete vahel liikudes.
+14. Kaheksa kohustusliku skaalaküsimuse ja nelja vabatahtliku tekstivälja kontroll, sessionStorage’i kinnitamine ja taastamine, salvestamata muudatuste kaitse ning eraldi TXT-/CSV-failide allalaadimine ja sisu kontroll. Treeneri sobivushinnang sisaldub failis.
 15. Kõik neli tulemuste vaate tegevust.
 16. Kõik kaheksa põhivaadet (avaleht, harjutuste valik, juhised, harjutamine, treeneri sisenemine, treeneri töölaud, tulemused ja tagasiside) laiustel **390, 620, 768, 820, 1024 ja 1440 pikslit**: külgsuunalist ülejooksu ei esinenud.
 17. Tahvelarvuti puuteekraaniga brauserikontekstis malendi ja sihtruudu puudutamine.

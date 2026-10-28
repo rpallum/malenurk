@@ -13,6 +13,9 @@
 @media(max-width:620px){.navlinks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}.navlinks button{white-space:normal;padding:9px 5px;font-size:12px;line-height:1.3}.instruction-grid{grid-template-columns:1fr;gap:14px}.instruction-card,.notation-card{padding:22px}.login-card{padding:26px}.login-card h1{font-size:34px}.coach-heading{align-items:flex-start;flex-direction:column}.feedback-page .form-actions{align-items:stretch;flex-direction:column}.contact-card{padding:18px}.feedback-delivery{padding:18px}.feedback-page .rating{gap:9px}.feedback-page .rating label{flex:1}.feedback-page .rating label>span:first-of-type{width:100%;max-width:50px}.exercise-selection .setup-bottom{align-items:flex-start;flex-direction:column}.exercise-selection .setup-bottom .btn{width:100%}.selection-intro{font-size:15px}.instruction-card h2{font-size:18px}}
 
 .question-error{font-size:13px;color:var(--red);font-weight:600;margin-top:10px}
+
+/* Tagasiside kinnitamine ja eraldi allalaadimised. */
+.feedback-saved{margin-top:18px;padding:20px;background:var(--lime);border:1px solid #cbd5bc;border-radius:10px;font-size:14px}.feedback-saved .form-actions{margin-top:15px}.feedback-dirty{margin-top:14px;font-size:13px;font-weight:600;color:var(--muted)}
 </style></head><body>
 <div id="app"></div><noscript><p>Malenurk vajab JavaScripti. Luba see brauseri seadetes ja ava fail uuesti.</p></noscript>
 <dialog id="modal" aria-label="Malenurga juhised"><div id="modal-content"></div></dialog>
@@ -3456,7 +3459,7 @@ function moveUci(m){return m.from+m.to+(m.promotion||'');}
 function applyMove(c,u){return c.move({from:u.slice(0,2),to:u.slice(2,4),promotion:u[4]||'q'});}
 function notation(s){return s.replace(/^[KQRBN]/,x=>({K:'K',Q:'L',R:'V',B:'O',N:'R'}[x])).replace(/=([QRBN])/,(_,x)=>'='+({Q:'L',R:'V',B:'O',N:'R'}[x]));}
 function lineText(p,line=p.solution){const c=new Chess(p.fen);return line.map((u,i)=>{const side=c.turn(),number=c.fen().split(' ')[5];const m=applyMove(c,u);return `${i===0&&side==='b'?number+'… ':side==='w'?number+'. ':''}${notation(m.san)}`;}).join('  ');}
-const state={page:'home',config:{level:'all',topic:'all',count:'5'},coach:{level:'all',topic:'all'},session:null,game:null,selected:null,orientation:'w',assessment:{},feedback:{},drag:null,coachUnlocked:false};
+const state={page:'home',config:{level:'all',topic:'all',count:'5'},coach:{level:'all',topic:'all'},session:null,game:null,selected:null,orientation:'w',assessment:{},feedback:{},drag:null,coachUnlocked:false,savedFeedback:null,feedbackDirty:false,feedbackError:''};
 let pendingPromotion=null;
 function getPool(config=state.config){return PUZZLES.filter(p=>(config.level==='all'||p.level===Number(config.level))&&(config.topic==='all'||p.topic===config.topic)).sort((a,b)=>a.level-b.level||TOPICS.findIndex(t=>t.id===a.topic)-TOPICS.findIndex(t=>t.id===b.topic));}
 function nav(){
@@ -3484,7 +3487,7 @@ function instructionsPage(){
   ['Vaata lahenduse mõtet.','„Vaata lahendust“ näitab käike ja selgitust ning märgib ülesande läbituks, kuid mitte õigesti lahendatuks. Ise leitud vastuse järel näed samuti põhjendust. Järgmise ülesande juurde saab pärast lahendamist või lahenduse avamist.'],
   ['Mõtesta oma tulemusi.','Edukus on õigesti lahendatud ülesannete osakaal läbitud ülesannetest. Õigeks loetakse ka pärast vihjet või eksimust leitud vastus. Esimesel katsel ja vihjeta lahendatud ülesanded kuvatakse eraldi. Lõpus saad korrata komplekti, valida raskema taseme või korrata keerulisi teemasid. Üks harjutuskord ei mõõda üldist maletugevust.']
  ];
- return `<section class="page instructions-page"><div class="eyebrow">Üks mõte korraga</div><h1>Juhised</h1><p class="page-intro">Malenurk on taktika harjutamiseks 9–12-aastastele noortele, kes on õppinud malet vähemalt kolm aastat. Võta aega mõtlemiseks ja märka iga käigu mõtet.</p><div class="instruction-grid">${steps.map(([title,text],i)=>`<article class="instruction-card"><span class="step">${i+1}</span><h2>${title}</h2><p>${text}</p></article>`).join('')}</div><div class="notation-card"><h2>Eestikeelsed malenditähised</h2><dl>${[['K','kuningas'],['L','lipp'],['V','vanker'],['O','oda'],['R','ratsu'],['x','löök'],['+','šahh'],['#','matt']].map(([sign,label])=>`<div><dt>${sign}</dt><dd>${label}</dd></div>`).join('')}</dl><p>Näiteks Rf7+ tähendab ratsu käiku ruudule f7 koos šahhiga.</p></div><div class="assessment-tip">Tulemused ja salvestamata tagasiside säilivad ainult avatud lehe tööseansi jooksul. Lehe sulgemisel või värskendamisel need kaovad. Laadi täidetud tagasiside enne alla.</div><button class="btn primary" data-action="exercises">Vali harjutuskord ${icon('arrow')}</button></section>`;
+ return `<section class="page instructions-page"><div class="eyebrow">Üks mõte korraga</div><h1>Juhised</h1><p class="page-intro">Malenurk on taktika harjutamiseks 9–12-aastastele noortele, kes on õppinud malet vähemalt kolm aastat. Võta aega mõtlemiseks ja märka iga käigu mõtet.</p><div class="instruction-grid">${steps.map(([title,text],i)=>`<article class="instruction-card"><span class="step">${i+1}</span><h2>${title}</h2><p>${text}</p></article>`).join('')}</div><div class="notation-card"><h2>Eestikeelsed malenditähised</h2><dl>${[['K','kuningas'],['L','lipp'],['V','vanker'],['O','oda'],['R','ratsu'],['x','löök'],['+','šahh'],['#','matt']].map(([sign,label])=>`<div><dt>${sign}</dt><dd>${label}</dd></div>`).join('')}</dl><p>Näiteks Rf7+ tähendab ratsu käiku ruudule f7 koos šahhiga.</p></div><div class="assessment-tip">Harjutustulemused ja salvestamata tagasiside kaovad lehe värskendamisel. Kinnitatud tagasiside säilib sama brauserivahelehe seansi jooksul ka pärast värskendamist. Vahelehe sulgemisel seanss lõpeb.</div><button class="btn primary" data-action="exercises">Vali harjutuskord ${icon('arrow')}</button></section>`;
 }
 function coachLoginPage(){return `<section class="page login-page"><div class="login-card"><span class="login-symbol">${icon('shield')}</span><div class="eyebrow">Treeneri töölaud</div><h1>Treeneri sisselogimine</h1><p>Treeneri vaates saad vaadata ülesandeid, vihjeid ja lahendusi.</p><form id="login-form" novalidate><label class="text-field">Salasõna<input type="password" name="password" autocomplete="current-password" required aria-describedby="login-status"></label><p id="login-status" class="form-status" role="status" aria-live="polite"></p><button class="btn primary" type="submit">Sisene treeneri vaatesse ${icon('arrow')}</button></form><button class="btn text" data-action="home">${icon('back')} Tagasi avalehele</button></div></section>`;}
 
@@ -3550,15 +3553,43 @@ const openQuestions=[
  'Milliseid ülesandetüüpe võiks juurde lisada?',
  'Kas programm sobib sihtrühma treeningute toetamiseks? Palun põhjenda.'
 ];
-const feedbackMailto='mailto:rasmus.pallum@gmail.com?subject='+encodeURIComponent('Malenurga tagasiside')+'&body='+encodeURIComponent('Tere!\n\nSaadan Malenurga tagasiside failina manusena.\n\n[Lisa enne saatmist allalaaditud tagasisidefail kirjale manusena.]');
+const FEEDBACK_STORAGE_KEY='malenurk.feedback.v1';
+function feedbackFields(payload){
+ const fields={author:payload.hindaja};
+ payload.hinnangud.forEach((item,i)=>fields['rating'+i]=String(item.punktid));
+ payload.vastused.forEach((item,i)=>fields['text'+i]=item.vastus);
+ return fields;
+}
+function restoreFeedback(){
+ try{
+  const raw=sessionStorage.getItem(FEEDBACK_STORAGE_KEY);if(!raw)return;
+  const payload=JSON.parse(raw);
+  if(payload.programm!=='Malenurk'||typeof payload.hindaja!=='string'||typeof payload.aeg!=='string'||!Array.isArray(payload.hinnangud)||payload.hinnangud.length!==8||!payload.hinnangud.every((item,i)=>item?.väide===criteria[i]&&Number.isInteger(item.punktid)&&item.punktid>=1&&item.punktid<=5)||!Array.isArray(payload.vastused)||payload.vastused.length!==4||!payload.vastused.every((item,i)=>item?.küsimus===openQuestions[i]&&typeof item.vastus==='string'))throw Error('Invalid feedback');
+  const assessments=Object.fromEntries(Object.entries(payload.ülesanneteSobivus||{}).filter(([id,value])=>PUZZLES.some(p=>p.id===id)&&['','sobib','kohandada','ei-sobi'].includes(value)));
+  state.savedFeedback={...payload,ülesanneteSobivus:assessments};
+  state.feedback=feedbackFields(state.savedFeedback);state.assessment={...assessments};
+ }catch{state.feedbackError='Salvestatud hinnangu taastamine ei õnnestunud. Võid vormi uuesti täita ja salvestada.';}
+}
+function feedbackIsSaved(){return Boolean(state.savedFeedback&&!state.feedbackDirty&&!state.feedbackError);}
+function updateFeedbackStatus(){
+ const button=$('#feedback-submit');if(!button)return;
+ const saved=feedbackIsSaved();button.textContent=saved?'Hinnang salvestatud':'Saadan oma tagasiside';
+ $('#feedback-saved').hidden=!saved;$('#feedback-dirty').hidden=!state.feedbackDirty;
+ document.querySelectorAll('#feedback-downloads button').forEach(button=>button.disabled=!saved);
+}
+function markFeedbackChanged(){
+ state.feedbackDirty=true;state.feedbackError='';
+ const status=$('#form-status');if(status){status.textContent='';status.classList.remove('error');}
+ updateFeedbackStatus();
+}
 function expertPage(){
  const f=state.feedback;
- return `<section class="page feedback-page"><div class="eyebrow">Sinu arvamus aitab edasi</div><h1>Tagasiside</h1><p class="page-intro">Hinda palun iga väidet skaalal 1–5, kus 1 = ei nõustu ja 5 = nõustun täielikult.</p><p class="feedback-instruction">Palun vasta kõikidele küsimustele, et saaksime lehte paremaks muuta.</p><p class="feedback-audience">Sihtrühm on 9–12-aastased vähemalt kolm aastat malet õppinud noored.</p><aside class="contact-card"><p><strong>Lehe autor:</strong> Rasmus Pallum</p><p><strong>Kontakt:</strong> <a href="mailto:rasmus.pallum@gmail.com">rasmus.pallum@gmail.com</a></p></aside><div class="assessment-tip">Vorm ei saada tagasisidet automaatselt. Laadi vastused alla ja lisa fail oma e-kirjale manusena. Lehe sulgemisel või värskendamisel kaovad salvestamata vastused.</div><form id="expert-form" class="form-card" novalidate><label class="text-field author-field">Hindaja nimi või tähis (soovi korral)<input name="author" value="${esc(f.author||'')}" autocomplete="off"></label><p class="scale-label">1 – ei nõustu · 2 – pigem ei nõustu · 3 – osaliselt nõustun · 4 – pigem nõustun · 5 – nõustun täielikult</p>${criteria.map((q,i)=>`<fieldset id="question-${i+1}"><legend>${i+1}. ${q}</legend><div class="rating">${[1,2,3,4,5].map(n=>`<label><input type="radio" name="rating${i}" value="${n}" required ${f['rating'+i]===String(n)?'checked':''}><span>${n}</span><span class="sr-only">${n} punkti</span></label>`).join('')}</div></fieldset>`).join('')}${openQuestions.map((q,i)=>`<label class="text-field" id="question-${i+9}">${i+9}. ${q}<textarea name="text${i}" rows="4" required>${esc(f['text'+i]||'')}</textarea></label>`).join('')}<div class="feedback-delivery"><h2>Jaga oma tagasisidet</h2><p>„Saadan oma tagasiside“ laadib vastused tekstifailina alla ning avab sinu meiliprogrammi. Lisa allalaaditud fail kirjale manusena ja saada kiri ise. Brauser ei lisa manust ega saada kirja automaatselt.</p><p>Kui meiliprogramm ei avane, saad faili eraldi alla laadida ja saata selle aadressile <a href="mailto:rasmus.pallum@gmail.com">rasmus.pallum@gmail.com</a>.</p></div><div class="form-actions"><button class="btn primary" type="submit">Saadan oma tagasiside ${icon('arrow')}</button><button class="btn" type="button" data-action="export-txt">${icon('download')} Laadi alla (.txt)</button><button class="btn" type="button" data-action="export-json">${icon('download')} Laadi alla (.json)</button></div><p class="form-status" id="form-status" role="status" aria-live="polite"></p><a class="mail-fallback" href="${feedbackMailto}">Ava meiliprogramm</a></form></section>`;
+ return `<section class="page feedback-page"><div class="eyebrow">Sinu arvamus aitab edasi</div><h1>Tagasiside</h1><p class="page-intro">Hinda palun iga väidet skaalal 1–5, kus 1 = ei nõustu ja 5 = nõustun täielikult.</p><p class="feedback-instruction">Küsimused 1–8 on kohustuslikud. Küsimustele 9–12 vastamine on vabatahtlik.</p><p class="feedback-audience">Sihtrühm on 9–12-aastased vähemalt kolm aastat malet õppinud noored.</p><aside class="contact-card"><p><strong>Lehe autor:</strong> Rasmus Pallum</p><p><strong>Kontakt:</strong> <a href="mailto:rasmus.pallum@gmail.com">rasmus.pallum@gmail.com</a></p></aside><div class="assessment-tip">Vastused salvestatakse kohalikult selle brauserivahelehe seanssi. Neid ei saadeta autorile. Salvestatud hinnang säilib lehe värskendamisel.</div><form id="expert-form" class="form-card" novalidate><label class="text-field author-field">Hindaja nimi või tähis (soovi korral)<input name="author" value="${esc(f.author||'')}" autocomplete="off"></label><p class="scale-label">1 – ei nõustu · 2 – pigem ei nõustu · 3 – osaliselt nõustun · 4 – pigem nõustun · 5 – nõustun täielikult</p>${criteria.map((q,i)=>`<fieldset id="question-${i+1}"><legend>${i+1}. ${q}</legend><div class="rating">${[1,2,3,4,5].map(n=>`<label><input type="radio" name="rating${i}" value="${n}" required ${f['rating'+i]===String(n)?'checked':''}><span>${n}</span><span class="sr-only">${n} punkti</span></label>`).join('')}</div></fieldset>`).join('')}${openQuestions.map((q,i)=>`<label class="text-field" id="question-${i+9}">${i+9}. ${q}<textarea name="text${i}" rows="4">${esc(f['text'+i]||'')}</textarea></label>`).join('')}<div class="feedback-delivery"><h2>Salvesta oma hinnang</h2><p>Kinnitamine talletab vastused selles brauseriseansis. Pärast salvestamist saad hinnangu eraldi TXT- või CSV-failina alla laadida. Salvestamata muudatused kaovad lehe värskendamisel; salvestatud hinnang säilib vahelehe sulgemiseni.</p></div><div class="form-actions"><button class="btn primary" id="feedback-submit" type="submit">Saadan oma tagasiside</button></div><div id="feedback-saved" class="feedback-saved" hidden><p role="status">Aitäh! Hinnang on selles brauseriseansis talletatud.</p><div class="form-actions" id="feedback-downloads"><button class="btn" type="button" data-action="export-txt" disabled>Laadi alla .txt</button><button class="btn" type="button" data-action="export-csv" disabled>Laadi alla .csv</button></div></div><p class="feedback-dirty" id="feedback-dirty" role="status" hidden>Muudatused salvestamata</p><p class="form-status ${state.feedbackError?'error':''}" id="form-status" role="status" aria-live="polite">${esc(state.feedbackError)}</p></form></section>`;
 }
 function bindForms(){
  $('#coach-topic')?.addEventListener('change',e=>{state.coach.topic=e.target.value;const pos=window.scrollY;render();window.scrollTo(0,pos);});
  $('#coach-level')?.addEventListener('change',e=>{state.coach.level=e.target.value;const pos=window.scrollY;render();window.scrollTo(0,pos);});
- document.querySelectorAll('.assessment').forEach(el=>el.addEventListener('change',e=>state.assessment[e.target.dataset.id]=e.target.value));
+ document.querySelectorAll('.assessment').forEach(el=>el.addEventListener('change',e=>{state.assessment[e.target.dataset.id]=e.target.value;markFeedbackChanged();}));
  const login=$('#login-form');
  if(login)login.addEventListener('submit',e=>{
   e.preventDefault();const input=login.elements.password;
@@ -3567,8 +3598,9 @@ function bindForms(){
  });
  const form=$('#expert-form');
  if(form){
-  form.addEventListener('input',e=>{state.feedback=Object.fromEntries(new FormData(form));e.target.removeAttribute('aria-invalid');e.target.removeAttribute('aria-describedby');e.target.closest('fieldset,.text-field')?.querySelector('.question-error')?.remove();});
-  form.addEventListener('submit',e=>{e.preventDefault();sendFeedback();});
+  form.addEventListener('input',e=>{state.feedback=Object.fromEntries(new FormData(form));e.target.removeAttribute('aria-invalid');e.target.removeAttribute('aria-describedby');e.target.closest('fieldset,.text-field')?.querySelector('.question-error')?.remove();markFeedbackChanged();});
+  form.addEventListener('submit',e=>{e.preventDefault();saveFeedback();});
+  updateFeedbackStatus();
  }
 }
 function validateFeedback(){
@@ -3576,40 +3608,52 @@ function validateFeedback(){
  state.feedback=Object.fromEntries(new FormData(form));
  form.querySelectorAll('.question-error').forEach(el=>el.remove());
  form.querySelectorAll('[aria-invalid]').forEach(el=>{el.removeAttribute('aria-invalid');el.removeAttribute('aria-describedby');});
- for(let i=0;i<12;i++){
-  const input=i<8?form.querySelector(`[name="rating${i}"]`):form.elements['text'+(i-8)];
-  const value=i<8?state.feedback['rating'+i]:input.value;
-  if(i<8?!/^[1-5]$/.test(value||''):!value.trim()){
-   const status=$('#form-status');
-   status.textContent=i<8?`Palun vali küsimusele ${i+1} üks hinne skaalal 1–5.`:`Palun vasta küsimusele ${i+1}. Ainult tühikutest ei piisa.`;
-   const error=document.createElement('p');error.id='question-error';error.className='question-error';error.textContent=status.textContent;error.setAttribute('role','alert');input.closest('fieldset,.text-field').append(error);
+ for(let i=0;i<8;i++){
+  if(!/^[1-5]$/.test(state.feedback['rating'+i]||'')){
+   const input=form.querySelector(`[name="rating${i}"]`),status=$('#form-status');
+   status.textContent=`Palun vali küsimusele ${i+1} üks hinne skaalal 1–5.`;
+   const error=document.createElement('p');error.id='question-error';error.className='question-error';error.textContent=status.textContent;error.setAttribute('role','alert');input.closest('fieldset').append(error);
    status.classList.add('error');input.setAttribute('aria-invalid','true');input.setAttribute('aria-describedby','question-error');
    $('#question-'+(i+1)).scrollIntoView({block:'center'});input.focus({preventScroll:true});return null;
   }
  }
  $('#form-status').classList.remove('error');
  const f=state.feedback;
- return {programm:'Malenurk',versioon:'1.1',aeg:new Date().toISOString(),hindaja:f.author||'',skaala:'1 – ei nõustu; 5 – nõustun täielikult',hinnangud:criteria.map((q,i)=>({väide:q,punktid:Number(f['rating'+i])})),vastused:openQuestions.map((q,i)=>({küsimus:q,vastus:f['text'+i]})),ülesanneteSobivus:{...state.assessment}};
+ return {programm:'Malenurk',versioon:'1.2',aeg:new Date().toISOString(),hindaja:f.author||'',skaala:'1 – ei nõustu; 5 – nõustun täielikult',hinnangud:criteria.map((q,i)=>({väide:q,punktid:Number(f['rating'+i])})),vastused:openQuestions.map((q,i)=>({küsimus:q,vastus:f['text'+i]||''})),ülesanneteSobivus:{...state.assessment}};
+}
+function saveFeedback(){
+ const payload=validateFeedback();if(!payload)return;
+ try{
+  const serialized=JSON.stringify(payload);
+  sessionStorage.setItem(FEEDBACK_STORAGE_KEY,serialized);
+  if(sessionStorage.getItem(FEEDBACK_STORAGE_KEY)!==serialized)throw Error('Feedback was not stored');
+  state.savedFeedback=payload;state.feedbackDirty=false;state.feedbackError='';
+  $('#form-status').textContent='';
+ }catch{
+  state.feedbackDirty=true;state.feedbackError='Hinnangu salvestamine ei õnnestunud. Vastused on vormis alles. Palun proovi uuesti või luba brauseris seansiandmete salvestamine.';
+  $('#form-status').textContent=state.feedbackError;$('#form-status').classList.add('error');
+ }
+ updateFeedbackStatus();
 }
 function downloadFeedback(type,payload){
- const text=type==='json'?JSON.stringify(payload,null,2):`MALENURK · TAGASISIDE\nHindaja: ${payload.hindaja||'Märkimata'}\nAeg: ${new Date(payload.aeg).toLocaleString('et-EE')}\nSkaala: ${payload.skaala}\n\n${payload.hinnangud.map((r,i)=>`${i+1}. ${r.väide}\nHinnang: ${r.punktid}/5`).join('\n\n')}\n\n${payload.vastused.map((r,i)=>`${i+9}. ${r.küsimus}\n${r.vastus}`).join('\n\n')}\n\nÜLESANNETE SOBIVUS\n${Object.entries(payload.ülesanneteSobivus).map(([id,a])=>`${id}: ${a}`).join('\n')||'Üksikülesannete hinnanguid ei lisatud.'}\n`;
- const url=URL.createObjectURL(new Blob(['\ufeff',text],{type:type==='json'?'application/json;charset=utf-8':'text/plain;charset=utf-8'}));
+ const answers=[...payload.hinnangud.map((item,i)=>[i+1,item.väide,String(item.punktid)]),...payload.vastused.map((item,i)=>[i+9,item.küsimus,item.vastus])];
+ let text;
+ if(type==='csv'){
+  const rows=[['Number','Küsimus','Vastus'],...answers,['','Hindaja',payload.hindaja],['','Salvestatud',payload.aeg],...Object.entries(payload.ülesanneteSobivus).map(([id,value])=>['','Ülesande '+id+' sobivus',value])];
+  text=rows.map(row=>row.map(value=>'"'+String(value).replace(/"/g,'""')+'"').join(';')).join('\r\n')+'\r\n';
+ }else{
+  text=`MALENURK · TAGASISIDE\nHindaja: ${payload.hindaja||'Märkimata'}\nSalvestatud: ${new Date(payload.aeg).toLocaleString('et-EE')}\nSkaala: ${payload.skaala}\n\n${answers.map(([n,question,answer])=>`${n}. ${question}\n${n<=8?'Hinnang: '+answer+'/5':answer}`).join('\n\n')}\n\nÜLESANNETE SOBIVUS\n${Object.entries(payload.ülesanneteSobivus).map(([id,a])=>`${id}: ${a}`).join('\n')||'Üksikülesannete hinnanguid ei lisatud.'}\n`;
+ }
+ const url=URL.createObjectURL(new Blob(['\ufeff',text],{type:type==='csv'?'text/csv;charset=utf-8':'text/plain;charset=utf-8'}));
  const a=document.createElement('a');a.href=url;a.download=`malenurk-tagasiside.${type}`;a.hidden=true;document.body.append(a);a.click();
  setTimeout(()=>{a.remove();URL.revokeObjectURL(url);},60000);
 }
 function exportFeedback(type){
- const payload=validateFeedback();if(!payload)return;
- downloadFeedback(type,payload);
- $('#form-status').textContent='Tagasisidefail on loodud. Lisa allalaaditud fail e-kirjale manusena ja saada kiri ise aadressile rasmus.pallum@gmail.com.';
-}
-function sendFeedback(){
- const payload=validateFeedback();if(!payload)return;
- downloadFeedback('txt',payload);
- $('#form-status').textContent='Tagasisidefail on loodud. Lisa allalaaditud fail kirjale manusena ja saada kiri ise. Kui meiliprogramm ei avane, laadi fail alla ja saada see aadressile rasmus.pallum@gmail.com. Kirja ei ole automaatselt saadetud.';
- try{$('.mail-fallback').click();}catch{/* Allalaadimine ja käsitsi saatmise juhis jäävad kättesaadavaks. */}
+ if(!['txt','csv'].includes(type)||!feedbackIsSaved())return;
+ downloadFeedback(type,state.savedFeedback);
 }
 
-function showDialog(type){if(type==='help'){navigate('instructions');return;}const content=`<h2>Malenurgast</h2><p>Versioon 1.1 · 28 õppeseisu seitsmel teemal. 21 algset koostatud seisu ja 7 värvivahetusega peegelvarianti aitavad sama ideed mõlema värviga ära tunda.</p><p style="margin-top:12px">Keskmine tase keskendub ühele taktikalisele ideele. Tugev tase lisab vastukäigu või malendite koostöö. Väga tugev tase kasutab ohvrit, alamuundamist, suhtelist sidumist või piiratud kaitset. Raskusastmed ei ole ametlik reiting; need vajavad treeneri ja sihtrühma õpilaste hinnangut.</p><p style="margin-top:12px">Mattides aktsepteeritakse kõiki kontrollitud matilahendusi. Teistes ülesannetes kontrollitakse küsimuses nimetatud konkreetset taktikalist eesmärki. See ei ole vabamängu analüüsimootor.</p><p style="margin-top:12px">Käikude seaduslikkust ning šahhi ja matti kontrollib HTML-i sisse pakitud chess.js 1.4.0 (BSD-2-Clause). Programm ei vaja serverit, kontot ega internetiühendust. Litsentsitekst asub faili lähtekoodis ja kaasasolevas README-failis.</p><p style="margin-top:12px">Õpetaja eksperdihinnangut ei ole veel kogutud. Autori tegelik roll, tema sisulised kontrollid ning tagasiside järel tehtud muudatused tuleb töö dokumentatsioonis eraldi kirjeldada.</p>`;$('#modal-content').innerHTML=`<button class="close" data-action="close-dialog" aria-label="Sulge aken">×</button>${content}<button class="btn primary" data-action="close-dialog" style="margin-top:22px">Selge ${icon('check')}</button>`;$('#modal').showModal();}
+function showDialog(type){if(type==='help'){navigate('instructions');return;}const content=`<h2>Malenurgast</h2><p>Versioon 1.2 · 28 õppeseisu seitsmel teemal. 21 algset koostatud seisu ja 7 värvivahetusega peegelvarianti aitavad sama ideed mõlema värviga ära tunda.</p><p style="margin-top:12px">Keskmine tase keskendub ühele taktikalisele ideele. Tugev tase lisab vastukäigu või malendite koostöö. Väga tugev tase kasutab ohvrit, alamuundamist, suhtelist sidumist või piiratud kaitset. Raskusastmed ei ole ametlik reiting; need vajavad treeneri ja sihtrühma õpilaste hinnangut.</p><p style="margin-top:12px">Mattides aktsepteeritakse kõiki kontrollitud matilahendusi. Teistes ülesannetes kontrollitakse küsimuses nimetatud konkreetset taktikalist eesmärki. See ei ole vabamängu analüüsimootor.</p><p style="margin-top:12px">Käikude seaduslikkust ning šahhi ja matti kontrollib HTML-i sisse pakitud chess.js 1.4.0 (BSD-2-Clause). Programm ei vaja serverit, kontot ega internetiühendust. Litsentsitekst asub faili lähtekoodis ja kaasasolevas README-failis.</p><p style="margin-top:12px">Õpetaja eksperdihinnangut ei ole veel kogutud. Autori tegelik roll, tema sisulised kontrollid ning tagasiside järel tehtud muudatused tuleb töö dokumentatsioonis eraldi kirjeldada.</p>`;$('#modal-content').innerHTML=`<button class="close" data-action="close-dialog" aria-label="Sulge aken">×</button>${content}<button class="btn primary" data-action="close-dialog" style="margin-top:22px">Selge ${icon('check')}</button>`;$('#modal').showModal();}
 function navigate(page){if(state.page==='play'&&state.session&&!state.session.current.recorded){state.pendingPage=page;$('#leave').showModal();return;}state.page=page;render();window.scrollTo(0,0);}
 function resetCurrent(){const r=state.session.current;const hints=r.hints,mistakes=r.mistakes;loadPuzzle();Object.assign(state.session.current,{hints,mistakes,feedback:'Algseis on taastatud. Avatud vihjed ja senised katsed jäävad alles.'});refreshPlay();}
 document.addEventListener('click',e=>{
@@ -3634,7 +3678,7 @@ document.addEventListener('click',e=>{
  else if(a==='leave-stay')$('#leave').close();
  else if(a==='leave-confirm'){$('#leave').close();state.page=state.pendingPage||'home';state.session=null;state.selected=null;render();window.scrollTo(0,0);}
  else if(a==='export-txt')exportFeedback('txt');
- else if(a==='export-json')exportFeedback('json');
+ else if(a==='export-csv')exportFeedback('csv');
 });
 document.addEventListener('dragstart',e=>{const sq=e.target.closest('[data-square]');if(!sq)return;const p=state.game?.get(sq.dataset.square);if(!p||p.color!==state.game.turn()){e.preventDefault();return;}state.drag=sq.dataset.square;e.dataTransfer.setData('text/plain',sq.dataset.square);e.dataTransfer.effectAllowed='move';});
 document.addEventListener('dragover',e=>{if(e.target.closest('[data-square]'))e.preventDefault();});
@@ -3642,6 +3686,7 @@ document.addEventListener('drop',e=>{const sq=e.target.closest('[data-square]');
 document.addEventListener('dragend',()=>state.drag=null);
 document.addEventListener('keydown',e=>{const sq=e.target.closest?.('[data-square]');if(!sq)return;if(e.key==='Escape'){state.selected=null;refreshPlay();return;}const deltas={ArrowLeft:-1,ArrowRight:1,ArrowUp:-8,ArrowDown:8};if(!(e.key in deltas))return;e.preventDefault();const all=[...document.querySelectorAll('[data-square]')],i=all.indexOf(sq),j=i+deltas[e.key];if(j>=0&&j<64&&(Math.abs(deltas[e.key])!==1||Math.floor(j/8)===Math.floor(i/8)))all[j].focus();});
 $('#promotion').addEventListener('cancel',()=>{pendingPromotion=null;});
+restoreFeedback();
 render();
 
 </script></body></html>

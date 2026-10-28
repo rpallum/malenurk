@@ -1,6 +1,6 @@
 # Malenurk
 
-Eestikeelne maleharjutuste veebiprogramm. Versioon 1.1, 28.10.2026.
+Eestikeelne maleharjutuste veebiprogramm. Versioon 1.2, 28.10.2026.
 
 ## Kiire käivitamine
 
@@ -10,9 +10,9 @@ Eestikeelne maleharjutuste veebiprogramm. Versioon 1.1, 28.10.2026.
 
 Paigaldamist, serverit, kontot, andmebaasi ega internetiühendust ei ole vaja. Kõik vajalik on selles ühes HTML-failis. ZIP-pakett tuleb enne avamist lahti pakkida. Tahvelarvutis tuleb fail avada JavaScripti toetavas brauseris: mõne failihalduri staatiline eelvaade ei käivita veebiprogramme. Kui seadme failirakendus ei paku HTML-i brauseris avamist, tuleb kasutada failide avamist toetavat brauserit või failihaldurit.
 
-**Tulemused ja salvestamata hinnangud kaovad lehe sulgemisel või värskendamisel.** Hinnanguvormi täitmise järel laadi vastused alla.
+**Harjutustulemused ja salvestamata muudatused kaovad lehe värskendamisel. Kinnitatud tagasiside taastub samas vahelehes sessionStorage’ist.** Püsiva koopia jaoks laadi kinnitatud hinnang eraldi alla.
 
-## Uus versioon 1.1
+## Uus versioon 1.2
 
 Säilivad Malenurga kreemikas ja roheline kujundus, logo, kirjatüübid, avalehe pealkiri ning kõik 28 kontrollitud maleülesannet. Ülamenüü sisaldab viit valikut: **Avaleht**, **Harjutused**, **Juhised**, **Treeneri vaade** ja **Tagasiside**. Aktiivne valik on tähistatud; harjutamise ja tulemuste ajal on aktiivne „Harjutused“. Väiksemal ekraanil jaguneb menüü mitmele reale.
 
@@ -27,31 +27,32 @@ Säilivad Malenurga kreemikas ja roheline kujundus, logo, kirjatüübid, avalehe
 
 **See on kasutajaliidese ligipääsupiirang, mitte turvaline autentimine.** Programm töötab ühe kohaliku HTML-failina ilma serverita. Parool, ülesannete seisud ja lahendused on faili lähtekoodis loetavad ning tehniliselt teadlik kasutaja saab piirangust mööduda. Neid ei saa selle lahendusega salajas hoida. Parooli ei kuvata lehe tekstis ega veateates. Ligipääsuolekut ei salvestata localStorage'isse, küpsisesse ega mujale püsivalt.
 
-### Avalik tagasiside ja e-post
+### Tagasiside salvestamine ja allalaadimine
 
-„Tagasiside“ ei nõua treeneri parooli. Lehel on autori nimi **Rasmus Pallum** ja klõpsatav kontakt **rasmus.pallum@gmail.com**. Kõik kaheksa skaalavastust ja neli avatud vastust on kohustuslikud. Tühikutest koosnev tekst ei sobi. Puuduva vastuse korral ilmub eestikeelne teade vastava küsimuse juurde, väli saab fookuse ja juba kirjutatud vastused jäävad alles.
+„Tagasiside“ ei nõua treeneri parooli. Lehel on autori nimi **Rasmus Pallum** ja klõpsatav kontakt **rasmus.pallum@gmail.com**. Küsimused **1–8 on kohustuslikud**: igale väitele tuleb valida üks hinne 1–5. Küsimused **9–12 on vabatahtlikud**; tekstiväljad võivad jääda tühjaks. Hindaja nimi on samuti vabatahtlik.
 
-Täidetud vormi kasutamiseks on kolm nuppu:
+1. Täida vähemalt kaheksa skaalaküsimust ja vajuta **Saadan oma tagasiside**. Puuduva kohustusliku vastuse korral ilmub küsimuse juurde eestikeelne teade ja vastav väli saab fookuse. Juba sisestatud vastused jäävad alles.
+2. Korrektne vorm salvestatakse selle brauserivahelehe `sessionStorage`-isse. Rakendus kontrollib kirjutamise järel salvestatud andmed tagasi lugedes üle. Alles õnnestunud salvestamise järel muutub sama nupu tekstiks **Hinnang salvestatud** ja nupu alla ilmub heleroheline teade **„Aitäh! Hinnang on selles brauseriseansis talletatud.“**
+3. Kinnitamine **ei laadi faili alla ega ava meiliprogrammi**. Vastused jäävad kohalikult brauserisse; neid ei saadeta autorile.
+4. Pärast salvestamist ilmuvad eraldi nupud **Laadi alla .txt** ja **Laadi alla .csv**. Fail luuakse ainult valitud allalaadimisnupu vajutamisel. Mõlemad failid sisaldavad kõiki 12 küsimust koos viimati salvestatud vastustega. Vabatahtlike küsimuste tühjad vastused on lubatud. Kaasatakse ka salvestamise hetke treeneri üksikülesannete sobivushinnangud, kui neid on.
+5. Vastuste või kaasatavate sobivushinnangute muutmisel kuvatakse **Muudatused salvestamata**, põhinupp muutub tagasi kujule **Saadan oma tagasiside** ning allalaadimisnupud peidetakse ja blokeeritakse. Salvesta muudatused enne eksportimist uuesti. Eksportija kasutab kinnitatud hinnangu koopiat ja ei ekspordi salvestamata mustandit.
 
-- **Laadi alla (.txt):** loob UTF-8 tekstifaili, mis sisaldab kõiki 12 nummerdatud küsimust ja vastust.
-- **Laadi alla (.json):** loob samade andmetega JSON-faili. Kaheksa skaalavastust on väljas `hinnangud` ning neli avatud vastust väljas `vastused`.
-- **Saadan oma tagasiside:** kontrollib kõik vastused, loob TXT-faili ja avab seadistatud meiliprogrammi aadressile `rasmus.pallum@gmail.com`, teemaga „Malenurga tagasiside“.
+Salvestatud vastused taastatakse sama brauserivahelehe lehevärskenduse järel. Vaadete vahel liikudes jääb alles ka salvestamata mustand. Värskendamisel kaob salvestamata mustand ning taastub viimane kinnitatud hinnang. Tavapäraselt lõpeb seanss vahelehe sulgemisel; brauseri seansi taastamise funktsioon võib seansiandmeid taastada. See salvestus ei ole pikaajaline arhiiv. Püsiva koopia jaoks kasuta eraldi allalaadimist.
 
-**Lisa allalaaditud fail kirjale manusena ja saada kiri ise.** Brauser ei manusta faili automaatselt ega saada kirja. Kui meiliprogramm ei avane või see pole seadistatud, kasuta eraldi allalaadimisnuppe ja lisa fail kirjale oma tavapärases meilikeskkonnas. Olemas on ka „Ava meiliprogramm“ link. Vastuste eksport toimib internetita; e-kirja tegelik saatmine vajab kasutaja enda meilivõimalust.
+Kui brauser keelab seansiandmete salvestamise või salvestusmaht saab täis, kuvatakse eestikeelne veateade ja vastused jäävad vormi alles. Edukat salvestamist ei kinnitata. Vigane või kättesaamatu varasem salvestus ei takista ülejäänud programmi kasutamist. Kohaliku `file:`-aadressi seansisalvestuse tugi sõltub brauserist; seda kontrolliti Chrome'is. Treeneri paroolilukk ja harjutustulemused jäävad endiselt ainult lehe töömällu ning neid värskendamisel ei taastata.
 
-Failides säilivad täpitähed, reavahetused ja pikad vastused. Treeneri antud üksikülesannete sobivushinnangud lisatakse samasse faili, kui neid on. Nimi on vabatahtlik. Vormivastused ja sobivushinnangud säilivad sama lehe vaadete vahel, kuid kaovad lehe värskendamisel või sulgemisel. Programm ei kasuta andmebaasi ega välist meiliteenust.
+TXT ja CSV on UTF-8 kodeeringus koos BOM-iga. CSV eraldaja on semikoolon; kõik väljad on jutumärkides, välja sees olev jutumärk dubleeritakse ning reavahetused jäävad tsiteeritud välja sisse. Failis on päis `Number;Küsimus;Vastus`, kõik 12 vastuserida, hindaja ja salvestusaeg ning vajaduse korral treeneri sobivushinnangud. Eesti täpitähed ja pikad vastused säilivad. JSON-allalaadimine ja automaatne meiliprogrammi avamine on asendatud kohaliku kinnitamise ning eraldi TXT/CSV-nuppudega.
 
-### Versiooni 1.1 muudatused ja kontrollid
+### Versiooni 1.2 muudatused ja kontrollid
 
-- Muudeti `lahtekood/app.js` ja `lahtekood/style.css`: viis menüüvalikut, eraldi harjutuste ja juhiste lehed, treeneri sisenemine/väljumine, 12 kohustusliku vastusega tagasisidevorm ning failid ja mailto-toiming.
-- Täiendati `lahtekood/test-browser.cjs` ja lisati `lahtekood/test-features.cjs` uute kasutusvoogude kontrolliks.
-- `node lahtekood/validate.cjs` läbis kõik 28 seisu ja taktikalise eesmärgi kontrolli. Ülesannete andmestikku ja reegliteeki ei muudetud.
-- `node lahtekood/build.cjs` ehitas lähtefailidest uuesti `Malenurk.html`.
-- `node lahtekood/test-browser.cjs` läbis kõik 19 kontrollrühma Chrome'is, võrguühenduseta ja kohalikust `file:`-aadressist. Ka tegelikud TXT- ja JSON-allalaadimised salvestati ja loeti tagasi. Windowsi piiratud käivitusliivakast katkestas allalaadimised; kogu test läbis sellest väljaspool eraldi ajutise brauseriprofiiliga.
-- Kontrolliti kõiki 28 ülesannet, 14 alternatiivset matiharu, kuue poolkäiguga lahendust, paroolilukku, kohustuslikke vastuseid, täpitähti ja pikki tekste, mailto-aadressi ja teemat, käsitsi manustamise juhist ning meiliprogrammi avamisvea varuvarianti. Päris meiliprogrammi käivitamine peatati testis; kirja ei saadetud.
-- Kaheksa vaadet testiti laiustel 390, 620, 768, 820, 1024 ja 1440 pikslit. Lisaks kontrolliti tahvelarvuti puutesisendit ning vaadati visuaalselt üle uute vaadete kuvatõmmised.
+- Muudeti `lahtekood/app.js` ja `lahtekood/style.css`: kaheksa kohustuslikku skaalavastust, neli vabatahtlikku tekstivastust, kinnitamine ja taastamine sessionStorage'ist, salvestatud/muudetud/vea olekud ning eraldi TXT- ja CSV-eksport. Praegune kujundus, menüü, treenerilukk ja harjutuste loogika säilitati.
+- Lisati `lahtekood/test-feedback.cjs` ning uuendati `test-features.cjs` ja `test-browser.cjs`. Test kontrollib iga puuduva kohustusliku vastuse tõkestamist, täpseid nupu- ja teavitetekste, allalaadimiste puudumist kinnitamisel/avamisel/värskendamisel, taastamist, uut salvestust, salvestustõrkeid ja aegunud mustandi ekspordi takistamist.
+- Kontrolliti CSV andmete tagasilugemist, sealhulgas semikoolonit, koma, jutumärke, reavahetusi, tühje vastuseid, täpitähti ja üle 4000 märgi pikkust teksti. Tegelikud TXT/CSV-failid laaditi alla ja loeti kettalt tagasi; kontrolliti ka UTF-8 BOM-i ja treeneri sobivushinnangu kaasamist.
+- `node lahtekood/validate.cjs` läbis kõik 28 seisu ja taktikalise eesmärgi kontrolli. `node lahtekood/build.cjs` ehitas lähtefailidest uue iseseisva `Malenurk.html` faili.
+- `node lahtekood/test-browser.cjs` läbis kõik **23 kontrollrühma** Chrome'is, võrguühenduseta ja kohalikust `file:`-aadressist. Windowsi piiratud käivitusliivakast katkestab failiallalaadimised, mistõttu kogu test käivitati eraldi ajutise brauseriprofiiliga väljaspool seda liivakasti.
+- Endiselt kontrolliti kõiki 28 ülesannet, 14 alternatiivset matiharu, kuue poolkäiguga lahendust, treenerilukku, kõiki kaheksat vaadet laiustel 390–1440 pikslit, tahvelarvuti puutesisendit ning JavaScripti vigade ja väliste ressursipäringute puudumist.
 
-Täpsem ülevaade ja piirid on failis `KONTROLLIARUANNE.md`. Automaatkontrollid ja näidisvastused ei ole päris õpetaja eksperdihinnang. Õpetaja ega õpilaste kasutuskatset ei ole selle arendusega tehtud.
+Täpsem ülevaade on failis `KONTROLLIARUANNE.md`. Automaatkontrollid ja testvastused ei ole päris õpetaja eksperdihinnang. Õpetaja ega õpilaste kasutuskatset ei ole selle arendusega tehtud.
 
 
 ## Eesmärk ja sihtrühm
@@ -72,7 +73,7 @@ Algversiooni raskusastmed on **esialgsed õppetasemed**, mitte ametlik reiting e
 - **Harjutuse tagasiside:** vale käik taastatakse ja õiget vastust ei avaldata. Lahenduse avamine on eraldi tegevus. Õige vastuse või avatud lahenduse järel näidatakse käike, selgitust, teemat, taset ning vihjete ja eksimuste arvu.
 - **Tulemused:** läbitud ja õigesti lahendatud ülesannete arv, edukus, vihjed ning teemade ülevaade. Saab korrata sama komplekti, valida raskema taseme, korrata keerulisi teemasid või naasta avalehele.
 - **Treeneri vaade:** tööseansi parooliga avatavad kõik ülesanded, teema- ja tasemefiltrid, seisud, FEN, lahendused, vihjed, üksiku ülesande või valitud komplekti käivitamine ning sobivushinnang.
-- **Tagasiside:** kõigile avatud vorm kaheksa kohustusliku skaalaküsimuse ja nelja kohustusliku avatud küsimusega. Vastused saab alla laadida TXT- või JSON-failina. Nupp „Saadan oma tagasiside“ loob TXT-faili ja avab kasutaja meiliprogrammi; fail tuleb ise manustada ja kiri ise saata. Treeneri üksikülesannete sobivushinnangud lisatakse eksporti.
+- **Tagasiside:** avalik vorm kaheksa kohustusliku skaalaküsimuse ja nelja vabatahtliku tekstivastusega. Kinnitamine salvestab hinnangu sessionStorage’isse ilma faili või meiliprogrammi avamata. Pärast kinnitamist saab salvestatud hinnangu eraldi TXT- või CSV-failina alla laadida. Muudatuste järel tuleb enne eksportimist uuesti salvestada.
 
 Kõik kasutajale nähtavad tekstid on eesti keeles. Malekäigud kasutavad eestikeelseid malenditähti: K – kuningas, L – lipp, V – vanker, O – oda, R – ratsu. x tähistab lööki, + šahhi ja # matti. Sisemised UCI-käigud ja FEN kasutavad rahvusvahelist tehnilist kuju.
 
@@ -99,7 +100,7 @@ Teemade võrdlus põhineb ainult ühel harjutuskorral. Väikese ülesannete arvu
 
 Teostusjärjekord oli: vaated ja kujundus → seisude koostamine ja kontroll → malelaud ja vastuste kontroll → vihjed ja selgitused → tulemused → treeneri vaade ja eksperdivorm → automaat- ja brauseritestid → parandused.
 
-Kasutatud on HTML-i, CSS-i ja JavaScripti. Kujundus ja malendite SVG-pildid asuvad HTML-is. Väliseid fonte, pildifaile ega CDN-päringuid käivitamisel ei kasutata. Andmed püsivad JavaScripti olekus; localStorage'i, küpsiseid, kasutajakontosid ega andmete saatmist ei kasutata.
+Kasutatud on HTML-i, CSS-i ja JavaScripti. Kujundus ja malendite SVG-pildid asuvad HTML-is. Väliseid fonte, pildifaile ega CDN-päringuid käivitamisel ei kasutata. Harjutuskord ja treeneri ligipääs püsivad JavaScripti mälus. Kinnitatud tagasiside salvestatakse sessionStorage’i võtmega `malenurk.feedback.v1` ja taastatakse sama vahelehe värskendamisel. localStorage’i, küpsiseid, kasutajakontosid ega andmete saatmist ei kasutata.
 
 **Väline teek:** chess.js 1.4.0, BSD-2-Clause, autor Jeff Hlywa. Teeki kasutatakse seaduslike käikude, kuninga ohutuse, šahhi ja mati kontrolliks. Selle kasutamine vähendab ise kirjutatud malereeglite vigade ohtu. Teek on tervikuna HTML-i sisse pakitud, mistõttu töö ei sõltu võrguühendusest ega välise teenuse saadavusest. Allikas ja dokumentatsioon: [chess.js GitHubis](https://github.com/jhlywa/chess.js). Litsentsi täielik tekst on HTML-i kommentaaris ja lähtekoodipaketis.
 
@@ -159,7 +160,7 @@ Esimene käsk kontrollib sisu ning loob `checked-data.json` ja `validation.json`
 
 6. Ava uus HTML, lahenda uus ülesanne ja lase treeneril vaadata üle sisu ning raskusaste. Automaatkontroll ei asenda pedagoogilist hinnangut ega tõesta seisu ajaloolist päritolu.
 
-Lähtefailid on loetavad ega vaja koodiminimeerimist või npm-pakette tavalise HTML-i ehitamiseks. Brauseritesti kordamiseks on vaja eraldi Playwrighti ja Chrome'i. Soovi korral paigalda lähtekoodikaustas `npm install --no-save playwright`, seejärel käivita paketi juurest `node lahtekood/test-browser.cjs`. Vaikimisi kasutatakse Chrome’i; muu toetatud kanali saab valida keskkonnamuutujaga `MALENURK_BROWSER` (näiteks `msedge`). Test kaasab automaatselt ka `test-features.cjs` ning peatab välise meiliprogrammi avamise. Brauseritest on praeguse 28 ülesandega versiooni regressioonitest; andmestiku suuruse muutmisel tuleb uuendada ka selle arvulisi ootusi.
+Lähtefailid on loetavad ega vaja koodiminimeerimist või npm-pakette tavalise HTML-i ehitamiseks. Brauseritesti kordamiseks on vaja eraldi Playwrighti ja Chrome'i. Soovi korral paigalda lähtekoodikaustas `npm install --no-save playwright`, seejärel käivita paketi juurest `node lahtekood/test-browser.cjs`. Vaikimisi kasutatakse Chrome’i; muu toetatud kanali saab valida keskkonnamuutujaga `MALENURK_BROWSER` (näiteks `msedge`). Test kaasab automaatselt ka `test-features.cjs` ja `test-feedback.cjs`. Tagasiside test kontrollib, et kinnitamine ei käivita allalaadimist ega meiliprogrammi. Brauseritest on praeguse 28 ülesandega versiooni regressioonitest; andmestiku suuruse muutmisel tuleb uuendada ka selle arvulisi ootusi.
 
 ## Raskusastmete põhimõtted
 
@@ -186,7 +187,7 @@ Visuaalselt vaadati üle avaleht ja harjutusvaade arvuti-, tahvelarvuti- ja tele
 - Mittemati ülesannete kontroll ei aktsepteeri suvalist head käiku ega paku positsiooni üldhinnangut.
 - Korraga mängitakse üks kontrollitud kaitseharu. Treener saab teisi harusid uurida eraldi.
 - Andmed püsivad aktiivse lehe mälus. Harjutuskorra jätkamist pärast lehe sulgemist, kontosid, paremusjärjestust ega pilvesalvestust pole.
-- Vastaja peab allalaaditud tagasisidefaili ise e-kirjale manustama ja kirja saatma; mailto-link ei saada kirja automaatselt.
+- Vastused jäävad kohalikku brauseriseanssi. Autorile edastamiseks tuleb hinnang eraldi alla laadida ja fail ise edastada; vorm ei saada andmeid ega ava meiliprogrammi.
 - Tahvelarvuti failihaldur võib piirata kohaliku HTML-i avamist; programm vajab päriselt JavaScripti käivitavat brauserit.
 
 Võimalikud edasiarendused on suurem sõltumatult kontrollitud ülesandepank, treeneri tagasiside põhjal ümber kalibreeritud raskusastmed, terviklikumad partiiseisud, õpilase võimalus valida vastase kaitseharu, kohalik failipõhine edenemise salvestamine ning sisukam harjutuste järjestamine.

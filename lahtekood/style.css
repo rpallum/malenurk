@@ -12,3 +12,6 @@
 @media(max-width:620px){.navlinks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}.navlinks button{white-space:normal;padding:9px 5px;font-size:12px;line-height:1.3}.instruction-grid{grid-template-columns:1fr;gap:14px}.instruction-card,.notation-card{padding:22px}.login-card{padding:26px}.login-card h1{font-size:34px}.coach-heading{align-items:flex-start;flex-direction:column}.feedback-page .form-actions{align-items:stretch;flex-direction:column}.contact-card{padding:18px}.feedback-delivery{padding:18px}.feedback-page .rating{gap:9px}.feedback-page .rating label{flex:1}.feedback-page .rating label>span:first-of-type{width:100%;max-width:50px}.exercise-selection .setup-bottom{align-items:flex-start;flex-direction:column}.exercise-selection .setup-bottom .btn{width:100%}.selection-intro{font-size:15px}.instruction-card h2{font-size:18px}}
 
 .question-error{font-size:13px;color:var(--red);font-weight:600;margin-top:10px}
+
+/* Tagasiside kinnitamine ja eraldi allalaadimised. */
+.feedback-saved{margin-top:18px;padding:20px;background:var(--lime);border:1px solid #cbd5bc;border-radius:10px;font-size:14px}.feedback-saved .form-actions{margin-top:15px}.feedback-dirty{margin-top:14px;font-size:13px;font-weight:600;color:var(--muted)}
