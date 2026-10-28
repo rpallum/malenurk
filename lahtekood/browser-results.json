@@ -1,6 +1,10 @@
 {
   "checks": [
-    "Offline avaleht, juhend ja programmi info",
+    "Kõik viis menüüvalikut, aktiivne valik ning avalehe harjutuste ja juhiste nupud",
+    "Tühi ja vale parool, täpne parool, Enter, kõik treeneri sisenemisteed, väljumine, värskendamine ja avalik tagasiside",
+    "Täpsed 12 kohustuslikku küsimust, tühikud, fookus, vastuste säilimine, täpitähed ja pikad täielikud vastused TXT/JSON-is",
+    "Autor ja mailto-kontakt; saatmine loob faili ja õige kirja, käsitsi manustamise juhis ning meiliprogrammi puudumise varuvariant",
+    "Offline avaleht, juhised ja programmi info",
     "Kõik 32 teema-taseme valikut ja 5/10/kõik komplektid",
     "Vale ja ebaseaduslik käik, 2 vihjet, algseis, lauapööre, avatud lahenduse arvestus",
     "Kõik 28 ülesannet lahendatud malelaua klikkidega, sh mustad, alamuundamine ja kõik lahenduskäigud",
@@ -12,7 +16,7 @@
     "Malendi lohistamine",
     "Treeneri vaade: filtrid, seisu avamine, sobivushinnang ja harjutamine",
     "8 skaalaküsimust ja 4 avatud küsimust; TXT/JSON eksport; vastuste säilimine navigeerimisel",
-    "Kõik 5 vaadet kuuel ekraanilaiusel: 390–1440 px, ilma külgkerimiseta",
+    "Kõik 8 vaadet kuuel ekraanilaiusel: 390–1440 px, ilma külgkerimiseta",
     "Tahvelarvuti puutesisend",
     "JavaScripti vigu pole; ühtegi võrguressurssi ei küsita"
   ],
