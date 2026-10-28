@@ -1,0 +1,855 @@
+{
+  "TOPICS": [
+    {
+      "id": "mate1",
+      "name": "Matt ühe käiguga",
+      "description": "Leia otsustav käik.",
+      "icon": "crown"
+    },
+    {
+      "id": "mate2",
+      "name": "Matt kahe käiguga",
+      "description": "Mõtle vastusest kaugemale.",
+      "icon": "flag"
+    },
+    {
+      "id": "fork",
+      "name": "Kahvel",
+      "description": "Üks malend, mitu sihtmärki.",
+      "icon": "fork"
+    },
+    {
+      "id": "pin",
+      "name": "Sidumine",
+      "description": "Märka malendite taga olevaid nuppe.",
+      "icon": "pin"
+    },
+    {
+      "id": "double",
+      "name": "Topeltrünnak",
+      "description": "Loo kaks ähvardust korraga.",
+      "icon": "target"
+    },
+    {
+      "id": "material",
+      "name": "Materjalivõit",
+      "description": "Arvuta, enne kui lööd.",
+      "icon": "diamond"
+    },
+    {
+      "id": "defence",
+      "name": "Rünnak ja kaitse",
+      "description": "Leia vastase plaanile vastus.",
+      "icon": "shield"
+    }
+  ],
+  "PUZZLES": [
+    {
+      "id": "m1-1",
+      "topic": "mate1",
+      "level": 0,
+      "title": "Tagumise rea nõrkus",
+      "fen": "6k1/5ppp/8/8/8/8/5PPP/3R2K1 w - - 0 1",
+      "solution": [
+        "d1d8"
+      ],
+      "question": "Leia matt ühe käiguga.",
+      "hints": [
+        "Vaata vastase kuninga tagumist rida.",
+        "Milline vankrikäik võtab kuningalt kõik põgenemisruudud?"
+      ],
+      "explanation": "Vanker matistab tagumisel real. Oma etturid võtavad vastase kuningalt põgenemisruudud.",
+      "rule": {
+        "kind": "mate1"
+      },
+      "source": "Malenurga jaoks koostatud õppeseis",
+      "accepted": [
+        "d1d8"
+      ]
+    },
+    {
+      "id": "m1-2",
+      "topic": "mate1",
+      "level": 1,
+      "title": "Kuningas lõksus",
+      "fen": "6rk/6pp/8/4N3/8/8/8/6K1 w - - 0 1",
+      "solution": [
+        "e5f7"
+      ],
+      "question": "Leia matt ratsuga.",
+      "hints": [
+        "Kuningas on oma malendite vahele surutud.",
+        "Ratsu šahhi ei saa vahele käies tõrjuda."
+      ],
+      "explanation": "Ratsu annab lämmatatud mati. Kuningat ümbritsevad tema enda malendid ning ükski neist ei saa ratsut lüüa.",
+      "rule": {
+        "kind": "mate1"
+      },
+      "source": "Malenurga jaoks koostatud õppeseis",
+      "accepted": [
+        "e5f7"
+      ]
+    },
+    {
+      "id": "m1-3",
+      "topic": "mate1",
+      "level": 2,
+      "title": "Koostöö diagonaalil",
+      "fen": "5rk1/5ppp/8/7Q/8/3B4/8/6K1 w - - 0 1",
+      "solution": [
+        "h5h7"
+      ],
+      "question": "Leia matt ühe käiguga. Arvesta kaitstud löögiruutu.",
+      "hints": [
+        "Oda ja lipp saavad rünnata sama kuningatiiva ruutu.",
+        "Jälgi oda pikka diagonaali kuni vastase etturini."
+      ],
+      "explanation": "Lipp lööb h7 etturi ja matistab. Oda d3 kaitseb lippu; kuningas ei saa seda lüüa.",
+      "rule": {
+        "kind": "mate1"
+      },
+      "source": "Malenurga jaoks koostatud õppeseis",
+      "accepted": [
+        "h5h7"
+      ]
+    },
+    {
+      "id": "m2-1",
+      "topic": "mate2",
+      "level": 0,
+      "title": "Sulge põgenemistee",
+      "fen": "7k/8/5K2/8/4Q3/8/8/8 w - - 0 1",
+      "solution": [
+        "e4b7",
+        "h8g8",
+        "b7g7"
+      ],
+      "question": "Sunni matt hiljemalt oma teisel käigul.",
+      "hints": [
+        "Ära kiirusta šahhiga. Kõigepealt piira kuninga liikumist.",
+        "Lipp võib jätta vastasele üheainsa käigu. Sinu kuningas kaitseb matiruutu."
+      ],
+      "explanation": "Näidisplaan: lipp b7-le, vastase kuningas g8-le ja Lg7 matt. Programm võtab vastu ka kõik teised sunnitud kahekäigulised matid.",
+      "rule": {
+        "kind": "mate2"
+      },
+      "source": "Malenurga jaoks koostatud õppeseis",
+      "mateTree": {
+        "f6g6": {
+          "h8g8": [
+            "e4a8",
+            "e4e8"
+          ]
+        },
+        "e4b7": {
+          "h8g8": [
+            "b7g7"
+          ]
+        },
+        "e4e7": {
+          "h8g8": [
+            "e7g7"
+          ]
+        },
+        "e4g4": {
+          "h8h7": [
+            "g4g7"
+          ]
+        },
+        "e4g2": {
+          "h8h7": [
+            "g2g7"
+          ]
+        }
+      },
+      "accepted": [
+        "e4b7"
+      ]
+    },
+    {
+      "id": "m2-2",
+      "topic": "mate2",
+      "level": 1,
+      "title": "Avatud tee odale",
+      "fen": "5bkr/5ppp/5r2/3QN3/2B5/8/8/6K1 w - - 0 1",
+      "solution": [
+        "d5f7",
+        "f6f7",
+        "c4f7"
+      ],
+      "question": "Leia sunnitud matt kahe käiguga.",
+      "hints": [
+        "Mõnikord avab lipu loovutamine tee teisele malendile.",
+        "Oda ja ratsu toetavad sama löögiruutu f7."
+      ],
+      "explanation": "Lxf7+ sunnib vankri lippu lööma. Seejärel Oxf7 matt: ratsu kaitseb oda ning musta enda malendid sulgevad põgenemisteed.",
+      "rule": {
+        "kind": "mate2"
+      },
+      "source": "Malenurga jaoks koostatud õppeseis",
+      "mateTree": {
+        "d5f7": {
+          "f6f7": [
+            "c4f7"
+          ]
+        }
+      },
+      "accepted": [
+        "d5f7"
+      ]
+    },
+    {
+      "id": "m2-3",
+      "topic": "mate2",
+      "level": 2,
+      "title": "Lipuohver ja ratsumatt",
+      "fen": "5r1k/6pp/4Q2N/8/8/8/8/6K1 w - - 0 1",
+      "solution": [
+        "e6g8",
+        "f8g8",
+        "h6f7"
+      ],
+      "question": "Leia matt kahe käiguga.",
+      "hints": [
+        "Vastase kuninga ümbruses on vähe vabu ruute. Kuidas sulgeda viimane?",
+        "Lipp saab meelitada vankri kuninga kõrvale. Seejärel otsib ratsu šahhi."
+      ],
+      "explanation": "Lg8+! sunnib Vxg8. Seejärel Rf7 matt: ratsu šahhi ei saa katta ning kuningas on oma malenditega ümbritsetud.",
+      "rule": {
+        "kind": "mate2"
+      },
+      "source": "Malenurga jaoks koostatud õppeseis",
+      "mateTree": {
+        "e6g8": {
+          "f8g8": [
+            "h6f7"
+          ]
+        }
+      },
+      "accepted": [
+        "e6g8"
+      ]
+    },
+    {
+      "id": "f-1",
+      "topic": "fork",
+      "level": 0,
+      "title": "Kaks sihtmärki",
+      "fen": "r3k3/8/8/1N6/8/8/8/6K1 w - - 0 1",
+      "solution": [
+        "b5c7"
+      ],
+      "question": "Anna ratsuga šahh ja ründa samal ajal vankrit.",
+      "hints": [
+        "Otsi ruutu, kust ratsu ulatub nii kuninga kui ka vankrini.",
+        "Vastane peab esmalt kuninga šahhist välja viima."
+      ],
+      "explanation": "Rc7+ ründab korraga kuningat e8 ja vankrit a8. Kuna vastane peab šahhi tõrjuma, saad järgmisel käigul vankri lüüa.",
+      "rule": {
+        "kind": "fork",
+        "targets": [
+          "e8",
+          "a8"
+        ],
+        "piece": "n",
+        "check": true
+      },
+      "source": "Malenurga jaoks koostatud õppeseis",
+      "accepted": [
+        "b5c7"
+      ]
+    },
+    {
+      "id": "f-2",
+      "topic": "fork",
+      "level": 1,
+      "title": "Lipp kahvlis",
+      "fen": "r5k1/3q1p1p/8/8/4N3/8/8/6K1 w - - 0 1",
+      "solution": [
+        "e4f6"
+      ],
+      "question": "Leia ratsukahvel kuningale ja lipule.",
+      "hints": [
+        "Ratsu peab andma šahhi ja ründama ka lippu.",
+        "Ära vaata ainult lööke: parim ratsukäik võib minna tühjale ruudule."
+      ],
+      "explanation": "Rf6+ ründab kuningat g8 ja lippu d7. Vastase kuningakäigu järel on lipp löögi all.",
+      "rule": {
+        "kind": "fork",
+        "targets": [
+          "g8",
+          "d7"
+        ],
+        "piece": "n",
+        "check": true
+      },
+      "source": "Malenurga jaoks koostatud õppeseis",
+      "accepted": [
+        "e4f6"
+      ]
+    },
+    {
+      "id": "f-3",
+      "topic": "fork",
+      "level": 2,
+      "title": "Etturi üllatus",
+      "fen": "8/1r1P1k2/8/8/8/8/8/6K1 w - - 0 1",
+      "solution": [
+        "d7d8n"
+      ],
+      "question": "Muunda ettur nii, et annad šahhi ja ründad vankrit.",
+      "hints": [
+        "Lipp ei ole alati parim muundumisvalik.",
+        "Milline muundunud malend saab korraga rünnata ruute f7 ja b7?"
+      ],
+      "explanation": "d8=R+! Ratsu ründab korraga kuningat f7 ja vankrit b7. See on alamuundamine: lipu asemel valid ratsu.",
+      "rule": {
+        "kind": "fork",
+        "targets": [
+          "f7",
+          "b7"
+        ],
+        "piece": "n",
+        "check": true
+      },
+      "source": "Malenurga jaoks koostatud õppeseis",
+      "accepted": [
+        "d7d8n"
+      ]
+    },
+    {
+      "id": "p-1",
+      "topic": "pin",
+      "level": 0,
+      "title": "Kuningas ratsu taga",
+      "fen": "r3k3/8/2n5/8/8/8/8/5BK1 w - - 0 1",
+      "solution": [
+        "f1b5"
+      ],
+      "question": "Seo ratsu kuningaga ühele diagonaalile.",
+      "hints": [
+        "Vaata, mis asub ratsu taga.",
+        "Oda saab liikuda diagonaalile b5–e8."
+      ],
+      "explanation": "Ob5 seob ratsu c6 kuningaga e8. Ratsu ei tohi diagonaalilt lahkuda, sest kuningas jääks šahhi alla.",
+      "rule": {
+        "kind": "pin",
+        "front": "c6",
+        "back": "e8"
+      },
+      "source": "Malenurga jaoks koostatud õppeseis",
+      "accepted": [
+        "f1b5"
+      ]
+    },
+    {
+      "id": "p-2",
+      "topic": "pin",
+      "level": 1,
+      "title": "Seo tugevam malend",
+      "fen": "4k3/4q3/8/8/8/8/8/3R1K2 w - - 0 1",
+      "solution": [
+        "d1e1"
+      ],
+      "question": "Seo lipp kuningaga samale liinile.",
+      "hints": [
+        "Lipp asub oma kuninga ees.",
+        "Vanker saab e-liinil survet avaldada. Kontrolli, kes vankrit kaitseb."
+      ],
+      "explanation": "Ve1 seob lipu e7 kuningaga e8. Kuningas f1 kaitseb vankrit: lipp ei saa seda tasuta lüüa. Sidumine piirab lipu liikumist, kuid ei tähenda veel sunnitud lipuvõitu.",
+      "rule": {
+        "kind": "pin",
+        "front": "e7",
+        "back": "e8"
+      },
+      "source": "Malenurga jaoks koostatud õppeseis",
+      "accepted": [
+        "d1e1"
+      ]
+    },
+    {
+      "id": "p-3",
+      "topic": "pin",
+      "level": 2,
+      "title": "Suhteline sidumine",
+      "fen": "6k1/8/2q5/3n4/8/8/8/1B4K1 w - - 0 1",
+      "solution": [
+        "b1e4"
+      ],
+      "question": "Seo ratsu tema taga oleva lipuga.",
+      "hints": [
+        "Siduda saab ka väärtuslikuma malendiga, mitte ainult kuningaga.",
+        "Otsi oda diagonaali, millel ratsu jääb oda ja lipu vahele."
+      ],
+      "explanation": "Oe4 seob ratsu d5 lipuga c6. Ratsu liikumine võib jätta lipu löögi alla. See on suhteline sidumine: ratsu liikumine on seaduslik, kuid selle tagajärgi peab arvutama.",
+      "rule": {
+        "kind": "pin",
+        "front": "d5",
+        "back": "c6"
+      },
+      "source": "Malenurga jaoks koostatud õppeseis",
+      "accepted": [
+        "b1e4"
+      ]
+    },
+    {
+      "id": "d-1",
+      "topic": "double",
+      "level": 0,
+      "title": "Lipp kahe ülesandega",
+      "fen": "r3k3/8/8/8/8/8/8/3Q2K1 w - - 0 1",
+      "solution": [
+        "d1a4"
+      ],
+      "question": "Anna lipuga šahh ja ründa ühtlasi vankrit.",
+      "hints": [
+        "Otsi lipule ruutu, kus ta ründab kahes eri suunas.",
+        "Diagonaal võib anda šahhi, samal ajal kui liin sihib vankrit."
+      ],
+      "explanation": "La4+ ründab kuningat e8 diagonaalil ja vankrit a8 a-liinil. Kuningas peab šahhile reageerima ning vanker jääb löögi alla.",
+      "rule": {
+        "kind": "double",
+        "targets": [
+          "e8",
+          "a8"
+        ],
+        "check": true
+      },
+      "source": "Malenurga jaoks koostatud õppeseis",
+      "accepted": [
+        "d1a4"
+      ]
+    },
+    {
+      "id": "d-2",
+      "topic": "double",
+      "level": 1,
+      "title": "Kaks diagonaali",
+      "fen": "r5k1/8/8/8/8/8/8/3Q2K1 w - - 0 1",
+      "solution": [
+        "d1d5"
+      ],
+      "question": "Anna šahh ning ründa vastase vankrit.",
+      "hints": [
+        "Lipp saab kasutada kaht diagonaali korraga.",
+        "Otsi d-liinil ruutu, kust avanevad teed nii a8 kui ka g8 suunas."
+      ],
+      "explanation": "Ld5+ ründab kuningat g8 ja vankrit a8 kahel eri diagonaalil. Vastane peab kuninga päästma ning vanker jääb löögi alla.",
+      "rule": {
+        "kind": "double",
+        "targets": [
+          "g8",
+          "a8"
+        ],
+        "check": true
+      },
+      "source": "Malenurga jaoks koostatud õppeseis",
+      "accepted": [
+        "d1d5"
+      ]
+    },
+    {
+      "id": "d-3",
+      "topic": "double",
+      "level": 2,
+      "title": "Avastatud rünnak",
+      "fen": "q7/8/8/3k4/8/8/N7/R5K1 w - - 0 1",
+      "solution": [
+        "a2c3"
+      ],
+      "question": "Liiguta ratsut nii, et annad šahhi ja avad vankri rünnaku lipule.",
+      "hints": [
+        "Ratsu varjab praegu oma vankri tegevust.",
+        "Otsi ratsule šahhiruutu, mis vabastab a-liini."
+      ],
+      "explanation": "Rc3+ annab ratsuga šahhi ja avab vankri a1 rünnaku lipule a8. Ratsu šahhi ei saa katta ning musta lipp ei saa ratsut lüüa.",
+      "rule": {
+        "kind": "discovered",
+        "attacker": "a1",
+        "target": "a8",
+        "check": true
+      },
+      "source": "Malenurga jaoks koostatud õppeseis",
+      "accepted": [
+        "a2c3"
+      ]
+    },
+    {
+      "id": "v-1",
+      "topic": "material",
+      "level": 0,
+      "title": "Löök viimasel real",
+      "fen": "3r4/4P1k1/8/8/8/8/8/6K1 w - - 0 1",
+      "solution": [
+        "e7d8q"
+      ],
+      "question": "Võida vanker ja muunda ettur lipuks.",
+      "hints": [
+        "Viimasele reale jõudes võib ettur ka lüüa.",
+        "Võrdle otse edasiliikumist löögiga naaberliinile."
+      ],
+      "explanation": "exd8=L võidab vankri ja muundab etturi lipuks. Üks käik täidab kaks eesmärki. Muundumisvalikus vali lipp.",
+      "rule": {
+        "kind": "capture",
+        "captured": "r",
+        "minGain": 13
+      },
+      "source": "Malenurga jaoks koostatud õppeseis",
+      "accepted": [
+        "e7d8q"
+      ]
+    },
+    {
+      "id": "v-2",
+      "topic": "material",
+      "level": 1,
+      "title": "Kas vahetus tasub ära?",
+      "fen": "4k3/3q4/8/8/8/8/8/3R2K1 w - - 0 1",
+      "solution": [
+        "d1d7",
+        "e8d7"
+      ],
+      "question": "Võida lipp vankri vastu. Arvesta ka vastulööki.",
+      "hints": [
+        "Ära hülga lööki ainult sellepärast, et sinu malend võidakse tagasi lüüa.",
+        "Võrdle lipu ja vankri ligikaudset väärtust."
+      ],
+      "explanation": "Vxd7! Kxd7 järel on mõlemad ründavad malendid laualt läinud. Lipp on ligikaudu 9 ja vanker 5 etturi väärtusega: võidad umbes 4 etturit materjali.",
+      "rule": {
+        "kind": "capture",
+        "captured": "q",
+        "minGain": 4
+      },
+      "source": "Malenurga jaoks koostatud õppeseis",
+      "accepted": [
+        "d1d7"
+      ]
+    },
+    {
+      "id": "v-3",
+      "topic": "material",
+      "level": 2,
+      "title": "Šahhidega lipuni",
+      "fen": "5k2/6q1/8/8/8/8/8/R6K w - - 0 1",
+      "solution": [
+        "a1a8",
+        "f8f7",
+        "a8a7",
+        "f7g6",
+        "a7g7",
+        "g6g7"
+      ],
+      "question": "Kasuta vankri šahhe, et võita lipp. Lahenda kogu käigujada.",
+      "hints": [
+        "Šahh sunnib kuninga liikuma. Vaata, millisele reale ta peab astuma.",
+        "Kui kuningas ja lipp on samal real, võib vanker need vardasse võtta."
+      ],
+      "explanation": "Va8+ Kf7 Va7+! sunnib kuninga lipu eest ära. Vxg7+ Kxg7 vahetab vankri lipu vastu: ligikaudne materjalivõit on 4 etturit. Kontrollime sinu kõiki kolme käiku; vastase käigud teeb programm.",
+      "rule": {
+        "kind": "material-line",
+        "minGain": 4
+      },
+      "source": "Malenurga jaoks koostatud õppeseis",
+      "checkedDefenceLeaves": 41,
+      "accepted": [
+        "a1a8"
+      ]
+    },
+    {
+      "id": "k-1",
+      "topic": "defence",
+      "level": 0,
+      "title": "Kõigepealt kuninga ohutus",
+      "fen": "6k1/8/8/8/8/5N2/7q/6K1 w - - 0 1",
+      "solution": [
+        "f3h2"
+      ],
+      "question": "Tõrju šahh ratsuga ja võida ründav lipp.",
+      "hints": [
+        "Šahhi korral kontrolli esmalt, kas saad ründaja lüüa.",
+        "Ratsu ulatub kuninga lähedal olevale lipuruudule."
+      ],
+      "explanation": "Rxh2 eemaldab šahistava lipu. Šahhile vastates saad vahel ühtaegu kaitsta kuningat ja võita materjali.",
+      "rule": {
+        "kind": "defence",
+        "captured": "q"
+      },
+      "source": "Malenurga jaoks koostatud õppeseis",
+      "accepted": [
+        "f3h2"
+      ]
+    },
+    {
+      "id": "k-2",
+      "topic": "defence",
+      "level": 1,
+      "title": "Õhuaken",
+      "fen": "r5k1/8/8/8/8/8/5PPP/6K1 w - - 0 1",
+      "solution": [
+        "h2h3"
+      ],
+      "question": "Liiguta h-etturit nii, et kuningal oleks pärast ...Va1+ põgenemisruut.",
+      "hints": [
+        "Tagumise rea matt on ohtlik siis, kui kuningal pole õhuakent.",
+        "h-etturi liikumine vabastab ruudu h2."
+      ],
+      "explanation": "h3 vabastab kuningale h2. Kui must annab Va1+, saab kuningas liikuda h2-le. Ka h4 täidab selle ülesande eesmärgi.",
+      "rule": {
+        "kind": "air",
+        "alternatives": [
+          "h2h4"
+        ],
+        "threat": "a8a1",
+        "escape": "g1h2"
+      },
+      "source": "Malenurga jaoks koostatud õppeseis",
+      "accepted": [
+        "h2h3",
+        "h2h4"
+      ]
+    },
+    {
+      "id": "k-3",
+      "topic": "defence",
+      "level": 2,
+      "title": "Ainus kaitse",
+      "fen": "6kr/8/1b6/8/8/8/R7/4n2K w - - 0 1",
+      "solution": [
+        "a2h2"
+      ],
+      "question": "Leia ainus seaduslik käik, mis tõrjub šahhi.",
+      "hints": [
+        "Kuninga põgenemisruudud on vastase malendite kontrolli all.",
+        "Kui kuningas ei saa liikuda ja ründajat ei saa lüüa, tuleb šahh katta."
+      ],
+      "explanation": "Vh2 katab h-liini. Kuningas ei saa minna g1-le oda ega g2-le ratsu tõttu. h2-le ei saa kuningas enne liikuda, sest seda kontrollib vanker.",
+      "rule": {
+        "kind": "defence",
+        "only": true
+      },
+      "source": "Malenurga jaoks koostatud õppeseis",
+      "accepted": [
+        "a2h2"
+      ]
+    },
+    {
+      "id": "m1-1b",
+      "topic": "mate1",
+      "level": 0,
+      "title": "Tagumise rea nõrkus · mustadega",
+      "fen": "1k2r3/ppp5/8/8/8/8/PPP5/1K6 b - - 0 1",
+      "solution": [
+        "e8e1"
+      ],
+      "question": "Leia matt ühe käiguga.",
+      "hints": [
+        "Vaata vastase kuninga tagumist rida.",
+        "Milline vankrikäik võtab kuningalt kõik põgenemisruudud?"
+      ],
+      "explanation": "Vanker matistab tagumisel real. Oma etturid võtavad vastase kuningalt põgenemisruudud.",
+      "rule": {
+        "kind": "mate1"
+      },
+      "source": "Malenurga jaoks koostatud õppeseis",
+      "variantOf": "m1-1",
+      "accepted": [
+        "e8e1"
+      ]
+    },
+    {
+      "id": "m2-1b",
+      "topic": "mate2",
+      "level": 0,
+      "title": "Sulge põgenemistee · mustadega",
+      "fen": "8/8/8/3q4/8/2k5/8/K7 b - - 0 1",
+      "solution": [
+        "d5g2",
+        "a1b1",
+        "g2b2"
+      ],
+      "question": "Sunni matt hiljemalt oma teisel käigul.",
+      "hints": [
+        "Ära kiirusta šahhiga. Kõigepealt piira kuninga liikumist.",
+        "Lipp võib jätta vastasele üheainsa käigu. Sinu kuningas kaitseb matiruutu."
+      ],
+      "explanation": "Näidisplaan: lipp g2-le, vastase kuningas b1-le ja Lb2 matt. Programm võtab vastu ka kõik teised sunnitud kahekäigulised matid.",
+      "rule": {
+        "kind": "mate2"
+      },
+      "source": "Malenurga jaoks koostatud õppeseis",
+      "variantOf": "m2-1",
+      "mateTree": {
+        "d5b7": {
+          "a1a2": [
+            "b7b2"
+          ]
+        },
+        "d5g2": {
+          "a1b1": [
+            "g2b2"
+          ]
+        },
+        "d5d2": {
+          "a1b1": [
+            "d2b2"
+          ]
+        },
+        "d5b5": {
+          "a1a2": [
+            "b5b2"
+          ]
+        },
+        "c3b3": {
+          "a1b1": [
+            "d5h1",
+            "d5d1"
+          ]
+        }
+      },
+      "accepted": [
+        "d5g2"
+      ]
+    },
+    {
+      "id": "f-1b",
+      "topic": "fork",
+      "level": 0,
+      "title": "Kaks sihtmärki · mustadega",
+      "fen": "1k6/8/8/8/6n1/8/8/3K3R b - - 0 1",
+      "solution": [
+        "g4f2"
+      ],
+      "question": "Anna ratsuga šahh ja ründa samal ajal vankrit.",
+      "hints": [
+        "Otsi ruutu, kust ratsu ulatub nii kuninga kui ka vankrini.",
+        "Vastane peab esmalt kuninga šahhist välja viima."
+      ],
+      "explanation": "Rf2+ ründab korraga kuningat d1 ja vankrit h1. Kuna vastane peab šahhi tõrjuma, saad järgmisel käigul vankri lüüa.",
+      "rule": {
+        "kind": "fork",
+        "targets": [
+          "d1",
+          "h1"
+        ],
+        "piece": "n",
+        "check": true
+      },
+      "source": "Malenurga jaoks koostatud õppeseis",
+      "variantOf": "f-1",
+      "accepted": [
+        "g4f2"
+      ]
+    },
+    {
+      "id": "p-1b",
+      "topic": "pin",
+      "level": 0,
+      "title": "Kuningas ratsu taga · mustadega",
+      "fen": "1kb5/8/8/8/8/5N2/8/3K3R b - - 0 1",
+      "solution": [
+        "c8g4"
+      ],
+      "question": "Seo ratsu kuningaga ühele diagonaalile.",
+      "hints": [
+        "Vaata, mis asub ratsu taga.",
+        "Oda saab liikuda diagonaalile g4–d1."
+      ],
+      "explanation": "Og4 seob ratsu f3 kuningaga d1. Ratsu ei tohi diagonaalilt lahkuda, sest kuningas jääks šahhi alla.",
+      "rule": {
+        "kind": "pin",
+        "front": "f3",
+        "back": "d1"
+      },
+      "source": "Malenurga jaoks koostatud õppeseis",
+      "variantOf": "p-1",
+      "accepted": [
+        "c8g4"
+      ]
+    },
+    {
+      "id": "d-1b",
+      "topic": "double",
+      "level": 0,
+      "title": "Lipp kahe ülesandega · mustadega",
+      "fen": "1k2q3/8/8/8/8/8/8/3K3R b - - 0 1",
+      "solution": [
+        "e8h5"
+      ],
+      "question": "Anna lipuga šahh ja ründa ühtlasi vankrit.",
+      "hints": [
+        "Otsi lipule ruutu, kus ta ründab kahes eri suunas.",
+        "Diagonaal võib anda šahhi, samal ajal kui liin sihib vankrit."
+      ],
+      "explanation": "Lh5+ ründab kuningat d1 diagonaalil ja vankrit h1 h-liinil. Kuningas peab šahhile reageerima ning vanker jääb löögi alla.",
+      "rule": {
+        "kind": "double",
+        "targets": [
+          "d1",
+          "h1"
+        ],
+        "check": true
+      },
+      "source": "Malenurga jaoks koostatud õppeseis",
+      "variantOf": "d-1",
+      "accepted": [
+        "e8h5"
+      ]
+    },
+    {
+      "id": "v-1b",
+      "topic": "material",
+      "level": 0,
+      "title": "Löök viimasel real · mustadega",
+      "fen": "1k6/8/8/8/8/8/1K1p4/4R3 b - - 0 1",
+      "solution": [
+        "d2e1q"
+      ],
+      "question": "Võida vanker ja muunda ettur lipuks.",
+      "hints": [
+        "Viimasele reale jõudes võib ettur ka lüüa.",
+        "Võrdle otse edasiliikumist löögiga naaberliinile."
+      ],
+      "explanation": "dxe1=L võidab vankri ja muundab etturi lipuks. Üks käik täidab kaks eesmärki. Muundumisvalikus vali lipp.",
+      "rule": {
+        "kind": "capture",
+        "captured": "r",
+        "minGain": 13
+      },
+      "source": "Malenurga jaoks koostatud õppeseis",
+      "variantOf": "v-1",
+      "accepted": [
+        "d2e1q"
+      ]
+    },
+    {
+      "id": "k-1b",
+      "topic": "defence",
+      "level": 0,
+      "title": "Kõigepealt kuninga ohutus · mustadega",
+      "fen": "1k6/Q7/2n5/8/8/8/8/1K6 b - - 0 1",
+      "solution": [
+        "c6a7"
+      ],
+      "question": "Tõrju šahh ratsuga ja võida ründav lipp.",
+      "hints": [
+        "Šahhi korral kontrolli esmalt, kas saad ründaja lüüa.",
+        "Ratsu ulatub kuninga lähedal olevale lipuruudule."
+      ],
+      "explanation": "Rxa7 eemaldab šahistava lipu. Šahhile vastates saad vahel ühtaegu kaitsta kuningat ja võita materjali.",
+      "rule": {
+        "kind": "defence",
+        "captured": "q"
+      },
+      "source": "Malenurga jaoks koostatud õppeseis",
+      "variantOf": "k-1",
+      "accepted": [
+        "c6a7"
+      ]
+    }
+  ],
+  "LEVELS": [
+    "Keskmine",
+    "Tugev",
+    "Väga tugev"
+  ]
+}

@@ -1,0 +1,254 @@
+[
+  {
+    "id": "m1-1",
+    "topic": "mate1",
+    "level": 0,
+    "plies": 1,
+    "legal": true,
+    "goal": true,
+    "alternatives": 1
+  },
+  {
+    "id": "m1-2",
+    "topic": "mate1",
+    "level": 1,
+    "plies": 1,
+    "legal": true,
+    "goal": true,
+    "alternatives": 1
+  },
+  {
+    "id": "m1-3",
+    "topic": "mate1",
+    "level": 2,
+    "plies": 1,
+    "legal": true,
+    "goal": true,
+    "alternatives": 1
+  },
+  {
+    "id": "m2-1",
+    "topic": "mate2",
+    "level": 0,
+    "plies": 3,
+    "legal": true,
+    "goal": true,
+    "alternatives": 5
+  },
+  {
+    "id": "m2-2",
+    "topic": "mate2",
+    "level": 1,
+    "plies": 3,
+    "legal": true,
+    "goal": true,
+    "alternatives": 1
+  },
+  {
+    "id": "m2-3",
+    "topic": "mate2",
+    "level": 2,
+    "plies": 3,
+    "legal": true,
+    "goal": true,
+    "alternatives": 1
+  },
+  {
+    "id": "f-1",
+    "topic": "fork",
+    "level": 0,
+    "plies": 1,
+    "legal": true,
+    "goal": true,
+    "alternatives": 1
+  },
+  {
+    "id": "f-2",
+    "topic": "fork",
+    "level": 1,
+    "plies": 1,
+    "legal": true,
+    "goal": true,
+    "alternatives": 1
+  },
+  {
+    "id": "f-3",
+    "topic": "fork",
+    "level": 2,
+    "plies": 1,
+    "legal": true,
+    "goal": true,
+    "alternatives": 1
+  },
+  {
+    "id": "p-1",
+    "topic": "pin",
+    "level": 0,
+    "plies": 1,
+    "legal": true,
+    "goal": true,
+    "alternatives": 1
+  },
+  {
+    "id": "p-2",
+    "topic": "pin",
+    "level": 1,
+    "plies": 1,
+    "legal": true,
+    "goal": true,
+    "alternatives": 1
+  },
+  {
+    "id": "p-3",
+    "topic": "pin",
+    "level": 2,
+    "plies": 1,
+    "legal": true,
+    "goal": true,
+    "alternatives": 1
+  },
+  {
+    "id": "d-1",
+    "topic": "double",
+    "level": 0,
+    "plies": 1,
+    "legal": true,
+    "goal": true,
+    "alternatives": 1
+  },
+  {
+    "id": "d-2",
+    "topic": "double",
+    "level": 1,
+    "plies": 1,
+    "legal": true,
+    "goal": true,
+    "alternatives": 1
+  },
+  {
+    "id": "d-3",
+    "topic": "double",
+    "level": 2,
+    "plies": 1,
+    "legal": true,
+    "goal": true,
+    "alternatives": 1
+  },
+  {
+    "id": "v-1",
+    "topic": "material",
+    "level": 0,
+    "plies": 1,
+    "legal": true,
+    "goal": true,
+    "alternatives": 1
+  },
+  {
+    "id": "v-2",
+    "topic": "material",
+    "level": 1,
+    "plies": 2,
+    "legal": true,
+    "goal": true,
+    "alternatives": 1
+  },
+  {
+    "id": "v-3",
+    "topic": "material",
+    "level": 2,
+    "plies": 6,
+    "legal": true,
+    "goal": true,
+    "alternatives": 1
+  },
+  {
+    "id": "k-1",
+    "topic": "defence",
+    "level": 0,
+    "plies": 1,
+    "legal": true,
+    "goal": true,
+    "alternatives": 1
+  },
+  {
+    "id": "k-2",
+    "topic": "defence",
+    "level": 1,
+    "plies": 1,
+    "legal": true,
+    "goal": true,
+    "alternatives": 2
+  },
+  {
+    "id": "k-3",
+    "topic": "defence",
+    "level": 2,
+    "plies": 1,
+    "legal": true,
+    "goal": true,
+    "alternatives": 1
+  },
+  {
+    "id": "m1-1b",
+    "topic": "mate1",
+    "level": 0,
+    "plies": 1,
+    "legal": true,
+    "goal": true,
+    "alternatives": 1
+  },
+  {
+    "id": "m2-1b",
+    "topic": "mate2",
+    "level": 0,
+    "plies": 3,
+    "legal": true,
+    "goal": true,
+    "alternatives": 5
+  },
+  {
+    "id": "f-1b",
+    "topic": "fork",
+    "level": 0,
+    "plies": 1,
+    "legal": true,
+    "goal": true,
+    "alternatives": 1
+  },
+  {
+    "id": "p-1b",
+    "topic": "pin",
+    "level": 0,
+    "plies": 1,
+    "legal": true,
+    "goal": true,
+    "alternatives": 1
+  },
+  {
+    "id": "d-1b",
+    "topic": "double",
+    "level": 0,
+    "plies": 1,
+    "legal": true,
+    "goal": true,
+    "alternatives": 1
+  },
+  {
+    "id": "v-1b",
+    "topic": "material",
+    "level": 0,
+    "plies": 1,
+    "legal": true,
+    "goal": true,
+    "alternatives": 1
+  },
+  {
+    "id": "k-1b",
+    "topic": "defence",
+    "level": 0,
+    "plies": 1,
+    "legal": true,
+    "goal": true,
+    "alternatives": 1
+  }
+]

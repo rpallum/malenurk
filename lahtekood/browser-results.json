@@ -1,0 +1,21 @@
+{
+  "checks": [
+    "Offline avaleht, juhend ja programmi info",
+    "Kõik 32 teema-taseme valikut ja 5/10/kõik komplektid",
+    "Vale ja ebaseaduslik käik, 2 vihjet, algseis, lauapööre, avatud lahenduse arvestus",
+    "Kõik 28 ülesannet lahendatud malelaua klikkidega, sh mustad, alamuundamine ja kõik lahenduskäigud",
+    "Tulemuste vaate kõik neli nuppu",
+    "14 alternatiivset kahekäigulise mati lõppharu",
+    "Kuue poolkäiguga materjalivõit nõuab kõiki kolme õpilase käiku; vale vahekäik ei anna tulemust",
+    "Muundumise tühistamine ja vale malendi valik ei lahenda ülesannet",
+    "Malelaua klaviatuurikasutus",
+    "Malendi lohistamine",
+    "Treeneri vaade: filtrid, seisu avamine, sobivushinnang ja harjutamine",
+    "8 skaalaküsimust ja 4 avatud küsimust; TXT/JSON eksport; vastuste säilimine navigeerimisel",
+    "Kõik 5 vaadet kuuel ekraanilaiusel: 390–1440 px, ilma külgkerimiseta",
+    "Tahvelarvuti puutesisend",
+    "JavaScripti vigu pole; ühtegi võrguressurssi ei küsita"
+  ],
+  "errors": [],
+  "networkRequests": []
+}
