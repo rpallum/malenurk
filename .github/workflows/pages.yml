@@ -46,6 +46,8 @@ jobs:
         run: node lahtekood/test-browser.cjs dist/index.html
       - name: Loe GitHub Pagesi seadistus
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
       - name: Laadi üles veebilehe failid
         uses: actions/upload-pages-artifact@v4
         with:

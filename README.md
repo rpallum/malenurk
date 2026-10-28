@@ -21,7 +21,7 @@ Soovitud püsiaadress pärast edukat avaldamist on **https://rpallum.github.io/m
 1. Kontrollib `node lahtekood/validate.cjs` abil kõik maleülesanded.
 2. Käivitab `node lahtekood/build-pages.cjs`, mis ehitab lähtefailidest `Malenurk.html` ja sellega identse `index.html`-i. Ka tavaline `node lahtekood/build.cjs` uuendab nüüd mõlemat juurkausta HTML-faili.
 3. Kontrollib brauseris just avaldatavat faili: `node lahtekood/test-browser.cjs dist/index.html`.
-4. Loeb olemasoleva Pagesi seadistuse, laadib üles `dist/` ja avaldab paketi `actions/deploy-pages` abil.
+4. Loeb Pagesi seadistuse ja proovib puuduvat Pagesi saiti aktiveerida; seejärel laadib üles `dist/` ja avaldab paketi `actions/deploy-pages` abil.
 5. Käivitab `node lahtekood/verify-site.cjs https://rpallum.github.io/malenurk/ "$GITHUB_SHA"`: nõuab edukat HTTP-vastust, võrdleb avaldatud commit'i ja HTML-i SHA-256 räsi ning kontrollib brauseris avalehte, õiget malekäiku, tagasisidevormi ja treenerilukku. Veebilehe vanemat versiooni ei loeta õnnestunud avaldamiseks.
 
 Avaldamispakett sisaldab ainult `index.html`, ühilduvuseks ka `Malenurk.html`, `.nojekyll` ja `deployment.json` versioonitõendi. Lähtekoodi, teste ja dokumente veebipaketti ei lisata. Kõik rakenduse sõltuvused on endiselt HTML-is ning kasutajaliides ei vaja võrguühendust pärast laadimist.
