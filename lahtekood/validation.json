@@ -1,254 +1,1997 @@
 [
   {
-    "id": "m1-1",
+    "id": "lichess-03YJr",
+    "source": "https://lichess.org/training/03YJr",
     "topic": "mate1",
     "level": 0,
-    "plies": 1,
-    "legal": true,
-    "goal": true,
-    "alternatives": 1
+    "status": "passed",
+    "dataSha256": "5cd1e8503a0be9595c5604aa9655283cd6d048d703bb4a57930eadc25c2f714c",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": true,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 1
   },
   {
-    "id": "m1-2",
-    "topic": "mate1",
-    "level": 1,
-    "plies": 1,
-    "legal": true,
-    "goal": true,
-    "alternatives": 1
-  },
-  {
-    "id": "m1-3",
-    "topic": "mate1",
-    "level": 2,
-    "plies": 1,
-    "legal": true,
-    "goal": true,
-    "alternatives": 1
-  },
-  {
-    "id": "m2-1",
-    "topic": "mate2",
-    "level": 0,
-    "plies": 3,
-    "legal": true,
-    "goal": true,
-    "alternatives": 5
-  },
-  {
-    "id": "m2-2",
-    "topic": "mate2",
-    "level": 1,
-    "plies": 3,
-    "legal": true,
-    "goal": true,
-    "alternatives": 1
-  },
-  {
-    "id": "m2-3",
-    "topic": "mate2",
-    "level": 2,
-    "plies": 3,
-    "legal": true,
-    "goal": true,
-    "alternatives": 1
-  },
-  {
-    "id": "f-1",
-    "topic": "fork",
-    "level": 0,
-    "plies": 1,
-    "legal": true,
-    "goal": true,
-    "alternatives": 1
-  },
-  {
-    "id": "f-2",
-    "topic": "fork",
-    "level": 1,
-    "plies": 1,
-    "legal": true,
-    "goal": true,
-    "alternatives": 1
-  },
-  {
-    "id": "f-3",
-    "topic": "fork",
-    "level": 2,
-    "plies": 1,
-    "legal": true,
-    "goal": true,
-    "alternatives": 1
-  },
-  {
-    "id": "p-1",
-    "topic": "pin",
-    "level": 0,
-    "plies": 1,
-    "legal": true,
-    "goal": true,
-    "alternatives": 1
-  },
-  {
-    "id": "p-2",
-    "topic": "pin",
-    "level": 1,
-    "plies": 1,
-    "legal": true,
-    "goal": true,
-    "alternatives": 1
-  },
-  {
-    "id": "p-3",
-    "topic": "pin",
-    "level": 2,
-    "plies": 1,
-    "legal": true,
-    "goal": true,
-    "alternatives": 1
-  },
-  {
-    "id": "d-1",
-    "topic": "double",
-    "level": 0,
-    "plies": 1,
-    "legal": true,
-    "goal": true,
-    "alternatives": 1
-  },
-  {
-    "id": "d-2",
-    "topic": "double",
-    "level": 1,
-    "plies": 1,
-    "legal": true,
-    "goal": true,
-    "alternatives": 1
-  },
-  {
-    "id": "d-3",
-    "topic": "double",
-    "level": 2,
-    "plies": 1,
-    "legal": true,
-    "goal": true,
-    "alternatives": 1
-  },
-  {
-    "id": "v-1",
-    "topic": "material",
-    "level": 0,
-    "plies": 1,
-    "legal": true,
-    "goal": true,
-    "alternatives": 1
-  },
-  {
-    "id": "v-2",
-    "topic": "material",
-    "level": 1,
-    "plies": 2,
-    "legal": true,
-    "goal": true,
-    "alternatives": 1
-  },
-  {
-    "id": "v-3",
-    "topic": "material",
-    "level": 2,
-    "plies": 6,
-    "legal": true,
-    "goal": true,
-    "alternatives": 1
-  },
-  {
-    "id": "k-1",
-    "topic": "defence",
-    "level": 0,
-    "plies": 1,
-    "legal": true,
-    "goal": true,
-    "alternatives": 1
-  },
-  {
-    "id": "k-2",
-    "topic": "defence",
-    "level": 1,
-    "plies": 1,
-    "legal": true,
-    "goal": true,
-    "alternatives": 2
-  },
-  {
-    "id": "k-3",
-    "topic": "defence",
-    "level": 2,
-    "plies": 1,
-    "legal": true,
-    "goal": true,
-    "alternatives": 1
-  },
-  {
-    "id": "m1-1b",
+    "id": "lichess-01fP3",
+    "source": "https://lichess.org/training/01fP3",
     "topic": "mate1",
     "level": 0,
-    "plies": 1,
-    "legal": true,
-    "goal": true,
-    "alternatives": 1
+    "status": "passed",
+    "dataSha256": "741b7dcde7d6e04d2390a089cc95bb780e104198a6f010a92c6f9989f398bfe1",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": true,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 1
   },
   {
-    "id": "m2-1b",
+    "id": "lichess-00aZP",
+    "source": "https://lichess.org/training/00aZP",
+    "topic": "mate1",
+    "level": 0,
+    "status": "passed",
+    "dataSha256": "34518d6f6d05c556577728143210a90b62a978d37d8bb992302f91591126182f",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": true,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 1
+  },
+  {
+    "id": "lichess-02HEw",
+    "source": "https://lichess.org/training/02HEw",
+    "topic": "mate1",
+    "level": 0,
+    "status": "passed",
+    "dataSha256": "09d5774a0284b7173372c7cace072680208336adf61355b90442cb3fe79378ad",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": true,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 1
+  },
+  {
+    "id": "lichess-00HnR",
+    "source": "https://lichess.org/training/00HnR",
+    "topic": "mate1",
+    "level": 0,
+    "status": "passed",
+    "dataSha256": "a5037874ac641637de7dbbd6806d3644dfeda9a6218912549da2db805abb78c2",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": true,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 1
+  },
+  {
+    "id": "lichess-09015",
+    "source": "https://lichess.org/training/09015",
+    "topic": "mate1",
+    "level": 1,
+    "status": "passed",
+    "dataSha256": "dc74cf69d517f8a7d3ce6bdfe33a044eac499af9855e79fe8f66fa97fb3d68f1",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": true,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 1
+  },
+  {
+    "id": "lichess-04ZIs",
+    "source": "https://lichess.org/training/04ZIs",
+    "topic": "mate1",
+    "level": 1,
+    "status": "passed",
+    "dataSha256": "f54a386be80d2cdce2942d103156bec56d40a08f1d8229817e27c5db0444a9ef",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": true,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 1
+  },
+  {
+    "id": "lichess-07lPB",
+    "source": "https://lichess.org/training/07lPB",
+    "topic": "mate1",
+    "level": 1,
+    "status": "passed",
+    "dataSha256": "e8aab1a5d0cf10245300d8a51f26f32dd6d830e6aebf9453bc8e3b36799c2f2d",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": true,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 1
+  },
+  {
+    "id": "lichess-094yw",
+    "source": "https://lichess.org/training/094yw",
+    "topic": "mate1",
+    "level": 1,
+    "status": "passed",
+    "dataSha256": "a9454be489bd0dfa394dea745fa77454c1b5aaaafebbea25b7616f521e32a347",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": true,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 1
+  },
+  {
+    "id": "lichess-040x1",
+    "source": "https://lichess.org/training/040x1",
+    "topic": "mate1",
+    "level": 1,
+    "status": "passed",
+    "dataSha256": "b949aa92f9933fab08d5e8870f720c2e89966d13e2c0306cdff09cd18215f2ab",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": true,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 1
+  },
+  {
+    "id": "lichess-0H8LG",
+    "source": "https://lichess.org/training/0H8LG",
+    "topic": "mate1",
+    "level": 2,
+    "status": "passed",
+    "dataSha256": "44243c848a8d2fee923c9061fddbbbdb199649dc5b9b5a2ff822363164100805",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": true,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 1
+  },
+  {
+    "id": "lichess-1Lk6N",
+    "source": "https://lichess.org/training/1Lk6N",
+    "topic": "mate1",
+    "level": 2,
+    "status": "passed",
+    "dataSha256": "c5ee31ca52b69859e3dfdc1908e1640076ace5bf5b00744eab6ef1192193e62c",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": true,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 1
+  },
+  {
+    "id": "lichess-1Rmb2",
+    "source": "https://lichess.org/training/1Rmb2",
+    "topic": "mate1",
+    "level": 2,
+    "status": "passed",
+    "dataSha256": "18a5e3987cddef5ae5e8a7ebc25cb8b281d8dd07b347f3c5c081fb6c5ff56471",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": true,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 1
+  },
+  {
+    "id": "lichess-09kAc",
+    "source": "https://lichess.org/training/09kAc",
+    "topic": "mate1",
+    "level": 2,
+    "status": "passed",
+    "dataSha256": "b2a4fd5820ff55758c6266f441dc60aa686069ad14e3a6ca4809434141aab31d",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": true,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 1
+  },
+  {
+    "id": "lichess-27N1U",
+    "source": "https://lichess.org/training/27N1U",
+    "topic": "mate1",
+    "level": 2,
+    "status": "passed",
+    "dataSha256": "0f7f9fbe0c13481c1bee26244e2e93b00f493a1e91a9baa071cc4cb1108946bf",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": true,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 1
+  },
+  {
+    "id": "lichess-03eh3",
+    "source": "https://lichess.org/training/03eh3",
     "topic": "mate2",
     "level": 0,
-    "plies": 3,
-    "legal": true,
-    "goal": true,
-    "alternatives": 5
+    "status": "passed",
+    "dataSha256": "96ff5d7d29403e5a86ae37594180d6eea3ab0b9958c1e7d5f98ad5fa57f38402",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": true,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 1
   },
   {
-    "id": "f-1b",
+    "id": "lichess-009f8",
+    "source": "https://lichess.org/training/009f8",
+    "topic": "mate2",
+    "level": 0,
+    "status": "passed",
+    "dataSha256": "1523600f7745e1eae43ae52e71e54d1361242b48fc67c51e7f53e06af1a0202d",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": true,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 1
+  },
+  {
+    "id": "lichess-01Xbe",
+    "source": "https://lichess.org/training/01Xbe",
+    "topic": "mate2",
+    "level": 0,
+    "status": "passed",
+    "dataSha256": "577fb39cea7d22470a6976cb1d179a432743d5f0d097ada4cead9d1d82a32ca6",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": true,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 1
+  },
+  {
+    "id": "lichess-037iS",
+    "source": "https://lichess.org/training/037iS",
+    "topic": "mate2",
+    "level": 0,
+    "status": "passed",
+    "dataSha256": "b5949b4a3c0528cae734214dc9860d07d33cbf9912aada90b46d16fab7dde874",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": true,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 1
+  },
+  {
+    "id": "lichess-00aCb",
+    "source": "https://lichess.org/training/00aCb",
+    "topic": "mate2",
+    "level": 0,
+    "status": "passed",
+    "dataSha256": "8d43df3d3b4b107ed1ae34004a6d3f7c6e263fa19b04067aad2a3f05da59d4d6",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": true,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 1
+  },
+  {
+    "id": "lichess-01QgQ",
+    "source": "https://lichess.org/training/01QgQ",
+    "topic": "mate2",
+    "level": 1,
+    "status": "passed",
+    "dataSha256": "1f4de543c4021c8eadd2eec2707955a815c037f70930eb2c5d4364c8755efc87",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": true,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 1
+  },
+  {
+    "id": "lichess-0Bk9P",
+    "source": "https://lichess.org/training/0Bk9P",
+    "topic": "mate2",
+    "level": 1,
+    "status": "passed",
+    "dataSha256": "d2c83ad722f83ca6fccdf6579c06b9520569e6c2771abad353c4043a5f3ee128",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": true,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 1
+  },
+  {
+    "id": "lichess-0Aqjg",
+    "source": "https://lichess.org/training/0Aqjg",
+    "topic": "mate2",
+    "level": 1,
+    "status": "passed",
+    "dataSha256": "d2b1a7e6da9d2c7bf541e851300e04aa71ba9a54f8b8eb756255829424a69f25",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": true,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 1
+  },
+  {
+    "id": "lichess-0BoDL",
+    "source": "https://lichess.org/training/0BoDL",
+    "topic": "mate2",
+    "level": 1,
+    "status": "passed",
+    "dataSha256": "93ee5632ff952d1678f7709fe7f3f43004997b2d1736990a4db595aa3187f5e9",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": true,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 1
+  },
+  {
+    "id": "lichess-01wIv",
+    "source": "https://lichess.org/training/01wIv",
+    "topic": "mate2",
+    "level": 1,
+    "status": "passed",
+    "dataSha256": "aa961ec77271334ef7cbc6abe402b4f26bb5d113fd5dac2d74fee44a6ed88c0c",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": true,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 1
+  },
+  {
+    "id": "lichess-02YZG",
+    "source": "https://lichess.org/training/02YZG",
+    "topic": "mate2",
+    "level": 2,
+    "status": "passed",
+    "dataSha256": "34427f1e560b1313d4b677e3780835b8177825fa0751b8e229074543f3c1d56c",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": true,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 1
+  },
+  {
+    "id": "lichess-0LDZp",
+    "source": "https://lichess.org/training/0LDZp",
+    "topic": "mate2",
+    "level": 2,
+    "status": "passed",
+    "dataSha256": "8df314280d897ddf346968f42cf86d7cdef20934aaba96a1a54c8b67b4ab9c24",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": true,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 1
+  },
+  {
+    "id": "lichess-19IET",
+    "source": "https://lichess.org/training/19IET",
+    "topic": "mate2",
+    "level": 2,
+    "status": "passed",
+    "dataSha256": "00c7b9ed14ad625317f5527ab96a2b00ec0b8faab56c9e9d65cebee66fe33748",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": true,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 1
+  },
+  {
+    "id": "lichess-0PhdF",
+    "source": "https://lichess.org/training/0PhdF",
+    "topic": "mate2",
+    "level": 2,
+    "status": "passed",
+    "dataSha256": "5573a94cbc188d1da57d4f3838864ba0049a2a797242c65c99532614c9c3c50d",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": true,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 1
+  },
+  {
+    "id": "lichess-0inBx",
+    "source": "https://lichess.org/training/0inBx",
+    "topic": "mate2",
+    "level": 2,
+    "status": "passed",
+    "dataSha256": "886a9b6c180c220befff867ed5ade9eaf232767e1d2e9b0e143abc5725442df1",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": true,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 1
+  },
+  {
+    "id": "lichess-04jF9",
+    "source": "https://lichess.org/training/04jF9",
     "topic": "fork",
     "level": 0,
-    "plies": 1,
-    "legal": true,
-    "goal": true,
-    "alternatives": 1
+    "status": "passed",
+    "dataSha256": "234e8b0478acbd54cba1c30c20002aa143b9df1fd9de874b2128448ab03aff48",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
   },
   {
-    "id": "p-1b",
+    "id": "lichess-02qUN",
+    "source": "https://lichess.org/training/02qUN",
+    "topic": "fork",
+    "level": 0,
+    "status": "passed",
+    "dataSha256": "28b7dbc26edcf6fe3bac27b99aa111c36bb4a54fc8655116d2dbace11c796475",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
+  },
+  {
+    "id": "lichess-01VBW",
+    "source": "https://lichess.org/training/01VBW",
+    "topic": "fork",
+    "level": 0,
+    "status": "passed",
+    "dataSha256": "d5085b33eb73fa878f87fdc94c694309c216170ac09cbd3c4004d01c9cad2de3",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 5
+  },
+  {
+    "id": "lichess-02lUz",
+    "source": "https://lichess.org/training/02lUz",
+    "topic": "fork",
+    "level": 0,
+    "status": "passed",
+    "dataSha256": "8a31d79e580b3e4d3ca540f408a362c462673553a71b6360ffdcfffaf972be3d",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
+  },
+  {
+    "id": "lichess-03Cgx",
+    "source": "https://lichess.org/training/03Cgx",
+    "topic": "fork",
+    "level": 0,
+    "status": "passed",
+    "dataSha256": "02e50a21791f8debbf0c59ac2fe10e5148f87ffd92b9f8a5334c87a617b278de",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 5
+  },
+  {
+    "id": "lichess-0871Z",
+    "source": "https://lichess.org/training/0871Z",
+    "topic": "fork",
+    "level": 1,
+    "status": "passed",
+    "dataSha256": "3a280fd6d6c133f8621ccea1992d2ac97221ea2670232bece6e01ae1030ad7a0",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 5
+  },
+  {
+    "id": "lichess-08mpr",
+    "source": "https://lichess.org/training/08mpr",
+    "topic": "fork",
+    "level": 1,
+    "status": "passed",
+    "dataSha256": "650810564f66e13695b43a3d40498bb1ef5a04b7f31514f30fd6ba38998a5570",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
+  },
+  {
+    "id": "lichess-04GHG",
+    "source": "https://lichess.org/training/04GHG",
+    "topic": "fork",
+    "level": 1,
+    "status": "passed",
+    "dataSha256": "239586ab37a21543da554a940ede5aed5b54eb44b8c847f0175e0310f9bcd927",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
+  },
+  {
+    "id": "lichess-04U8S",
+    "source": "https://lichess.org/training/04U8S",
+    "topic": "fork",
+    "level": 1,
+    "status": "passed",
+    "dataSha256": "07e1329b23611697d77d00fcc455a804d0b67623a44fe31993c69ad7449aa10e",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 5
+  },
+  {
+    "id": "lichess-01cmV",
+    "source": "https://lichess.org/training/01cmV",
+    "topic": "fork",
+    "level": 1,
+    "status": "passed",
+    "dataSha256": "c7c73eb5891643c1777eb76c2f38c216f35a7194d8c991bf79d7f32fe9b9ef19",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 5
+  },
+  {
+    "id": "lichess-0AagP",
+    "source": "https://lichess.org/training/0AagP",
+    "topic": "fork",
+    "level": 2,
+    "status": "passed",
+    "dataSha256": "4709ce693b03b6aa7b5651af459676f44cd767ef5cb826d719fbaa0dfa9f1f3e",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 5
+  },
+  {
+    "id": "lichess-0E6WY",
+    "source": "https://lichess.org/training/0E6WY",
+    "topic": "fork",
+    "level": 2,
+    "status": "passed",
+    "dataSha256": "1b299f0ea84b5c5b4bfc6280793ae3cb962147501d89a8c87fe5597f667dd2b4",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 5
+  },
+  {
+    "id": "lichess-0EYQV",
+    "source": "https://lichess.org/training/0EYQV",
+    "topic": "fork",
+    "level": 2,
+    "status": "passed",
+    "dataSha256": "6bf899a751780eacaafd377cd11272e3c8b83a5c1d7e85cf19432e05b2e87f92",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 5
+  },
+  {
+    "id": "lichess-0Csn4",
+    "source": "https://lichess.org/training/0Csn4",
+    "topic": "fork",
+    "level": 2,
+    "status": "passed",
+    "dataSha256": "909aaa76f077ba6dcc67a7baa90549637c530ad00f22ff491694b88d57e087df",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 7
+  },
+  {
+    "id": "lichess-09X01",
+    "source": "https://lichess.org/training/09X01",
+    "topic": "fork",
+    "level": 2,
+    "status": "passed",
+    "dataSha256": "f35f942ce93ce12af74d4092ce18f3136373787ca52e66564fb17ab874f55fdb",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 5
+  },
+  {
+    "id": "lichess-0KUDH",
+    "source": "https://lichess.org/training/0KUDH",
     "topic": "pin",
     "level": 0,
-    "plies": 1,
-    "legal": true,
-    "goal": true,
-    "alternatives": 1
+    "status": "passed",
+    "dataSha256": "578adb526cadc3cbb4387144176e542976e912aa945356f4fbc00f9d8a2130a1",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
   },
   {
-    "id": "d-1b",
+    "id": "lichess-05428",
+    "source": "https://lichess.org/training/05428",
+    "topic": "pin",
+    "level": 0,
+    "status": "passed",
+    "dataSha256": "42c925875ce4d5ceeb71b2f7a4cbf483d5a40c664a6c6a127117b29dafcfd74c",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
+  },
+  {
+    "id": "lichess-0BJad",
+    "source": "https://lichess.org/training/0BJad",
+    "topic": "pin",
+    "level": 0,
+    "status": "passed",
+    "dataSha256": "3244075aab5279156dd9631c982beee8cf65df512329448142b8b07147993a5b",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
+  },
+  {
+    "id": "lichess-0CsBI",
+    "source": "https://lichess.org/training/0CsBI",
+    "topic": "pin",
+    "level": 0,
+    "status": "passed",
+    "dataSha256": "4b9abef89b44e92d940f5ae1ea6d11ba4775a73abf85afa98091357f14b9eddf",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
+  },
+  {
+    "id": "lichess-09Hpb",
+    "source": "https://lichess.org/training/09Hpb",
+    "topic": "pin",
+    "level": 0,
+    "status": "passed",
+    "dataSha256": "32a9456634efc55cdaee366b8b4eb18ca295dd4e4a8d1caf6f2c121c66fa01d9",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
+  },
+  {
+    "id": "lichess-04uOg",
+    "source": "https://lichess.org/training/04uOg",
+    "topic": "pin",
+    "level": 1,
+    "status": "passed",
+    "dataSha256": "76aff293077a745d5c226ca2fac9846bfd58fb213ad22410e7018f1f3d4173a4",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 5
+  },
+  {
+    "id": "lichess-0Fo1B",
+    "source": "https://lichess.org/training/0Fo1B",
+    "topic": "pin",
+    "level": 1,
+    "status": "passed",
+    "dataSha256": "523fd88cfa91c91ee774d17b06fb9c578984013e39e161888c884d51b51661d7",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
+  },
+  {
+    "id": "lichess-0CCBh",
+    "source": "https://lichess.org/training/0CCBh",
+    "topic": "pin",
+    "level": 1,
+    "status": "passed",
+    "dataSha256": "c0e731ffb81fbb06ee379352762255381d975c5cce3c6f9cde88b04e7feb13bc",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
+  },
+  {
+    "id": "lichess-00oXF",
+    "source": "https://lichess.org/training/00oXF",
+    "topic": "pin",
+    "level": 1,
+    "status": "passed",
+    "dataSha256": "24570b0d3b47049dcce134fec800b2fbfb29d435b6bd012d955fd75b0ae3d9a5",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
+  },
+  {
+    "id": "lichess-0BYnD",
+    "source": "https://lichess.org/training/0BYnD",
+    "topic": "pin",
+    "level": 1,
+    "status": "passed",
+    "dataSha256": "7c251fff6ae5597201bdb714ba7b5d58514f2e25730f6c81dcf7c4bde0bab67c",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 7
+  },
+  {
+    "id": "lichess-0D5ow",
+    "source": "https://lichess.org/training/0D5ow",
+    "topic": "pin",
+    "level": 2,
+    "status": "passed",
+    "dataSha256": "c0d82355f994786c5ce70cca5685dc69d05715602d549e9edf49bd6ba64fa5bd",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
+  },
+  {
+    "id": "lichess-0G1tE",
+    "source": "https://lichess.org/training/0G1tE",
+    "topic": "pin",
+    "level": 2,
+    "status": "passed",
+    "dataSha256": "f8beb298663c2a458471e730a7605ead8c155914ef35e2ba356e52dda55a1d64",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
+  },
+  {
+    "id": "lichess-0H8Nr",
+    "source": "https://lichess.org/training/0H8Nr",
+    "topic": "pin",
+    "level": 2,
+    "status": "passed",
+    "dataSha256": "1916cf87d3e5aaf8d10491d1960d1f4eec72a5637eb3ccd329205d3a12cdaf3b",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 7
+  },
+  {
+    "id": "lichess-0AGfC",
+    "source": "https://lichess.org/training/0AGfC",
+    "topic": "pin",
+    "level": 2,
+    "status": "passed",
+    "dataSha256": "e7cdf26d80d31c66fc07ece96074c43d3c152610915a410e93ca846813bf4f5b",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 7
+  },
+  {
+    "id": "lichess-0IKZY",
+    "source": "https://lichess.org/training/0IKZY",
+    "topic": "pin",
+    "level": 2,
+    "status": "passed",
+    "dataSha256": "8f6a59cf20b82b2c77f36adfea8f309ae6d1d1ed24ff42ead2e4cf687630912e",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 5
+  },
+  {
+    "id": "lichess-02UFP",
+    "source": "https://lichess.org/training/02UFP",
     "topic": "double",
     "level": 0,
-    "plies": 1,
-    "legal": true,
-    "goal": true,
-    "alternatives": 1
+    "status": "passed",
+    "dataSha256": "c4cde60777832201e6069db55038b50b3ba06e1a42e32e8d44929c3a233abc69",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
   },
   {
-    "id": "v-1b",
+    "id": "lichess-04I5l",
+    "source": "https://lichess.org/training/04I5l",
+    "topic": "double",
+    "level": 0,
+    "status": "passed",
+    "dataSha256": "1bc0d35abded8be662fe3ddb87570e844a636948f034af85fae8e1f8e0d262c4",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
+  },
+  {
+    "id": "lichess-0EsGB",
+    "source": "https://lichess.org/training/0EsGB",
+    "topic": "double",
+    "level": 0,
+    "status": "passed",
+    "dataSha256": "7c037c96c76d75f4c0d52ef42a5c349c258193a2a2ae4dfed26f688c6cf90f79",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
+  },
+  {
+    "id": "lichess-044zv",
+    "source": "https://lichess.org/training/044zv",
+    "topic": "double",
+    "level": 0,
+    "status": "passed",
+    "dataSha256": "895685844fdbb511d8d19705bc3fc12cb3f331ef6f7359df3c43dda6acb9ec85",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
+  },
+  {
+    "id": "lichess-07YFf",
+    "source": "https://lichess.org/training/07YFf",
+    "topic": "double",
+    "level": 0,
+    "status": "passed",
+    "dataSha256": "834d002fc5effc866e722f803b72425a589642e9400353fd99e77bee12e2db5b",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
+  },
+  {
+    "id": "lichess-0BcyA",
+    "source": "https://lichess.org/training/0BcyA",
+    "topic": "double",
+    "level": 1,
+    "status": "passed",
+    "dataSha256": "630f89474fa32b236b942eea7e4b83df43e90fb99e4b3b24813061e658b76f61",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
+  },
+  {
+    "id": "lichess-0Jbx2",
+    "source": "https://lichess.org/training/0Jbx2",
+    "topic": "double",
+    "level": 1,
+    "status": "passed",
+    "dataSha256": "57e4743c870f3b612305a3c76bd871e2e33319f4743e5a73b4e69169a0209505",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 5
+  },
+  {
+    "id": "lichess-0DY8b",
+    "source": "https://lichess.org/training/0DY8b",
+    "topic": "double",
+    "level": 1,
+    "status": "passed",
+    "dataSha256": "a033372927ba31be8b45d7685420f9073b57419b17b7b2c8ef63deb5670fd952",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
+  },
+  {
+    "id": "lichess-07M1s",
+    "source": "https://lichess.org/training/07M1s",
+    "topic": "double",
+    "level": 1,
+    "status": "passed",
+    "dataSha256": "a023caea76f35d995be8247dd0767345f74214fb33a4e1b594a4ad560a6bf29e",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 5
+  },
+  {
+    "id": "lichess-04hhS",
+    "source": "https://lichess.org/training/04hhS",
+    "topic": "double",
+    "level": 1,
+    "status": "passed",
+    "dataSha256": "fbff13cb0c1bb5d4fd6b2d8899576245b1c6716516b42037b54af54f999c17f9",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
+  },
+  {
+    "id": "lichess-0SHxm",
+    "source": "https://lichess.org/training/0SHxm",
+    "topic": "double",
+    "level": 2,
+    "status": "passed",
+    "dataSha256": "455f176c5be56eb53782e6a9011f411b12c29c4775275c8fc267de06286e1c71",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
+  },
+  {
+    "id": "lichess-0Spmn",
+    "source": "https://lichess.org/training/0Spmn",
+    "topic": "double",
+    "level": 2,
+    "status": "passed",
+    "dataSha256": "b24fe5c6ed4afba58c2bc16f0e8cf8f14afcf87b3a778abd7a167fc0a73faa96",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 5
+  },
+  {
+    "id": "lichess-0UUq6",
+    "source": "https://lichess.org/training/0UUq6",
+    "topic": "double",
+    "level": 2,
+    "status": "passed",
+    "dataSha256": "b58bf8c73dd9fd193f5cf7e55ca538e48c8905e183ebf15d2b5511d579ecbd04",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
+  },
+  {
+    "id": "lichess-00ZEW",
+    "source": "https://lichess.org/training/00ZEW",
+    "topic": "double",
+    "level": 2,
+    "status": "passed",
+    "dataSha256": "ffb206c04099d24a350e7b28ebd25b9dfd5b7bb2c886f734023283b63ca3fb17",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 5
+  },
+  {
+    "id": "lichess-0QHHL",
+    "source": "https://lichess.org/training/0QHHL",
+    "topic": "double",
+    "level": 2,
+    "status": "passed",
+    "dataSha256": "f9a74d81b6292e8cfcb8ec1d15aad4e86ac9f5425fecfc1ef67ec54a26774cdb",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 5
+  },
+  {
+    "id": "lichess-041yQ",
+    "source": "https://lichess.org/training/041yQ",
     "topic": "material",
     "level": 0,
-    "plies": 1,
-    "legal": true,
-    "goal": true,
-    "alternatives": 1
+    "status": "passed",
+    "dataSha256": "6f692db1809ddee4fbf74b68f0263764af7cb502c52039f7b7881214e4c2c41c",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 48
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
   },
   {
-    "id": "k-1b",
+    "id": "lichess-003eP",
+    "source": "https://lichess.org/training/003eP",
+    "topic": "material",
+    "level": 0,
+    "status": "passed",
+    "dataSha256": "37045e9efac48d556be8568922253f404246b301efafedfcb89e3f2a3e4dbb38",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 56
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 5
+  },
+  {
+    "id": "lichess-03Qx8",
+    "source": "https://lichess.org/training/03Qx8",
+    "topic": "material",
+    "level": 0,
+    "status": "passed",
+    "dataSha256": "8cfd5006862ff97d6a9a0743d17a9d24dd222518c99a9e43ed8cb30c754936db",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 31
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
+  },
+  {
+    "id": "lichess-087Yo",
+    "source": "https://lichess.org/training/087Yo",
+    "topic": "material",
+    "level": 0,
+    "status": "passed",
+    "dataSha256": "202cb0fb8d3e93a75cb6fbc1a2051c5e63145b51ceb16e57c084b50d9a376c30",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 4
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
+  },
+  {
+    "id": "lichess-00TiV",
+    "source": "https://lichess.org/training/00TiV",
+    "topic": "material",
+    "level": 0,
+    "status": "passed",
+    "dataSha256": "62bee27a34a8581818143378d37d6167f742695ad67f2c0220ecdc75e273b556",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 46
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
+  },
+  {
+    "id": "lichess-07ybB",
+    "source": "https://lichess.org/training/07ybB",
+    "topic": "material",
+    "level": 1,
+    "status": "passed",
+    "dataSha256": "104eaac095e314d54d9e74722e3bf75c12fea2b32560ceb584550aeb14438b2b",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 87
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
+  },
+  {
+    "id": "lichess-02Pu3",
+    "source": "https://lichess.org/training/02Pu3",
+    "topic": "material",
+    "level": 1,
+    "status": "passed",
+    "dataSha256": "6c4fa7175a799d70bda0907f52d8f07f2dd089622fa87e360f09e4d6aa6509ca",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 45
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
+  },
+  {
+    "id": "lichess-05qJ2",
+    "source": "https://lichess.org/training/05qJ2",
+    "topic": "material",
+    "level": 1,
+    "status": "passed",
+    "dataSha256": "aa72fe3c83bf88bfc8e175822782e1d68d919313a2b1586d49092bbf87140945",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 45
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 5
+  },
+  {
+    "id": "lichess-03xhx",
+    "source": "https://lichess.org/training/03xhx",
+    "topic": "material",
+    "level": 1,
+    "status": "passed",
+    "dataSha256": "76c9f5bb067c51862c7733d1d28e4fd0f56c45cd739099b4c41632d79dd19ada",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 1
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
+  },
+  {
+    "id": "lichess-03LZQ",
+    "source": "https://lichess.org/training/03LZQ",
+    "topic": "material",
+    "level": 1,
+    "status": "passed",
+    "dataSha256": "7a9aaf7d9fe6f0b00a7a568ddf954ffdf8b9ae2f78f32f53e4c29094ea6dd2de",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 2
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 5
+  },
+  {
+    "id": "lichess-0E3g5",
+    "source": "https://lichess.org/training/0E3g5",
+    "topic": "material",
+    "level": 2,
+    "status": "passed",
+    "dataSha256": "e97f03ea4d655084d572fc80fb53e234ca03496643fbf9d5708cb4b45965c985",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 34
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
+  },
+  {
+    "id": "lichess-0B2Dr",
+    "source": "https://lichess.org/training/0B2Dr",
+    "topic": "material",
+    "level": 2,
+    "status": "passed",
+    "dataSha256": "006b8ba09c63aed3558333b8ad64361df4d2fc0b05d535651184087668248b2e",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 25
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
+  },
+  {
+    "id": "lichess-0Dnoc",
+    "source": "https://lichess.org/training/0Dnoc",
+    "topic": "material",
+    "level": 2,
+    "status": "passed",
+    "dataSha256": "1b2a13e687f23d1e934c8911d26ed823e3e464280b637456c36c53243be38cd9",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 2
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
+  },
+  {
+    "id": "lichess-03IoD",
+    "source": "https://lichess.org/training/03IoD",
+    "topic": "material",
+    "level": 2,
+    "status": "passed",
+    "dataSha256": "4743cfd5189e2962fd9e00ed3c66e9d3544033b38477d3d7a4ddd5d2ad93da37",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 31
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
+  },
+  {
+    "id": "lichess-01CmR",
+    "source": "https://lichess.org/training/01CmR",
+    "topic": "material",
+    "level": 2,
+    "status": "passed",
+    "dataSha256": "d768967c3135f374a425c45c6c7379ed8d4a6b0ea2fbe1350811b54822a2ee3c",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 35
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 5
+  },
+  {
+    "id": "lichess-06AH0",
+    "source": "https://lichess.org/training/06AH0",
     "topic": "defence",
     "level": 0,
-    "plies": 1,
-    "legal": true,
-    "goal": true,
-    "alternatives": 1
+    "status": "passed",
+    "dataSha256": "ef9944196a88cdc7650a7363860ae9fb50233d6847e21487cdde963784e316eb",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 5
+  },
+  {
+    "id": "lichess-0AN5p",
+    "source": "https://lichess.org/training/0AN5p",
+    "topic": "defence",
+    "level": 0,
+    "status": "passed",
+    "dataSha256": "061ca440780dc1bb0fd12babc9d338cf6b90942ae6222c00a37dbdf6100f02aa",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
+  },
+  {
+    "id": "lichess-00Gvr",
+    "source": "https://lichess.org/training/00Gvr",
+    "topic": "defence",
+    "level": 0,
+    "status": "passed",
+    "dataSha256": "4e1424da538aa4fd75491d4e86a366f06b173cfb219e35be285b72e1f2097166",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
+  },
+  {
+    "id": "lichess-09ndC",
+    "source": "https://lichess.org/training/09ndC",
+    "topic": "defence",
+    "level": 0,
+    "status": "passed",
+    "dataSha256": "585c3cd60c70c4249ac74f019f6bc6d02e74c305411bfc4556f8acf7e852f09e",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 5
+  },
+  {
+    "id": "lichess-02ccm",
+    "source": "https://lichess.org/training/02ccm",
+    "topic": "defence",
+    "level": 0,
+    "status": "passed",
+    "dataSha256": "72dfc1ef1d968cda5eee2eb9573c065bb6ac33cbe3b00e72ef9d5ac475f39565",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 5
+  },
+  {
+    "id": "lichess-02FEH",
+    "source": "https://lichess.org/training/02FEH",
+    "topic": "defence",
+    "level": 1,
+    "status": "passed",
+    "dataSha256": "a4aacfcebe32d08953b62058b24d1e302338e391e482498e9bcb77230d6c723f",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 5
+  },
+  {
+    "id": "lichess-070k6",
+    "source": "https://lichess.org/training/070k6",
+    "topic": "defence",
+    "level": 1,
+    "status": "passed",
+    "dataSha256": "811e2c1b638ada0772d97805857cd6bd26516190e5ded90a9e019b5d4ab7183f",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
+  },
+  {
+    "id": "lichess-0BuC1",
+    "source": "https://lichess.org/training/0BuC1",
+    "topic": "defence",
+    "level": 1,
+    "status": "passed",
+    "dataSha256": "50d87b6a51bbb1e2819ac82c1fcfaf0079fb2df253211a4f9d88ce79bef2470d",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
+  },
+  {
+    "id": "lichess-00XZR",
+    "source": "https://lichess.org/training/00XZR",
+    "topic": "defence",
+    "level": 1,
+    "status": "passed",
+    "dataSha256": "b79bd7370919d59410e3d2b3e1404b80faf919aff74615dfde7d17e85bcdf90f",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 5
+  },
+  {
+    "id": "lichess-00veX",
+    "source": "https://lichess.org/training/00veX",
+    "topic": "defence",
+    "level": 1,
+    "status": "passed",
+    "dataSha256": "d1bcd5062320caefdb3e42f4b50049334749ea47abfd953e755ae38f3aac6315",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 5
+  },
+  {
+    "id": "lichess-03Xp4",
+    "source": "https://lichess.org/training/03Xp4",
+    "topic": "defence",
+    "level": 2,
+    "status": "passed",
+    "dataSha256": "97192f5c3c0379a4f9a36cd504ae7333cc6bdcbb6074b5aa6c1c8504babfd381",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 3
+  },
+  {
+    "id": "lichess-0AcRz",
+    "source": "https://lichess.org/training/0AcRz",
+    "topic": "defence",
+    "level": 2,
+    "status": "passed",
+    "dataSha256": "dd1c978df2b102ec071776305bdcebb8896086f129d6bbe2da097596dbed1acf",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 5
+  },
+  {
+    "id": "lichess-00ZvN",
+    "source": "https://lichess.org/training/00ZvN",
+    "topic": "defence",
+    "level": 2,
+    "status": "passed",
+    "dataSha256": "793c03546ce7c7aae1fccc898cb3e119b6f65333a535dce6aa4cfd7b433928bc",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 5
+  },
+  {
+    "id": "lichess-05KMF",
+    "source": "https://lichess.org/training/05KMF",
+    "topic": "defence",
+    "level": 2,
+    "status": "passed",
+    "dataSha256": "a62354dd2c319b1f2b1bcd42f1258c333ff5b3017c149d61f63da2b81c8e474b",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 7
+  },
+  {
+    "id": "lichess-08H8F",
+    "source": "https://lichess.org/training/08H8F",
+    "topic": "defence",
+    "level": 2,
+    "status": "passed",
+    "dataSha256": "d41549d53506aa39d5d4be0683575ac1050176a4d930f0f242764c509399402d",
+    "chessJs": {
+      "legal": true,
+      "preparationCorrect": true,
+      "allSolutionPlies": true,
+      "goal": true,
+      "completeMateAlternatives": false,
+      "materialDefenceLeaves": 0
+    },
+    "pythonChess": "1.11.2",
+    "engine": "Stockfish 19",
+    "analysedPositions": 7
   }
 ]

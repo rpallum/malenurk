@@ -3,9 +3,10 @@ const path=require('node:path');
 const dir=__dirname;
 const read=n=>fs.readFileSync(path.join(dir,n),'utf8');
 const data=JSON.parse(read('checked-data.json'));
+require('./validate.cjs').integrity(data);
 const license=read('LICENSE-chess.txt');
 const html=`<!doctype html>
-<html lang="et"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Malenurk – eestikeelsed maleharjutused vähemalt kolm aastat malet õppinud 9–12-aastastele. 28 ülesannet, vihjed ja treeneri vaade. Töötab ka internetita."><meta name="theme-color" content="#243c2d"><title>Malenurk – iga käik loeb</title><style>${read('style.css')}</style></head><body>
+<html lang="et"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Malenurk – eestikeelsed maleharjutused vähemalt kolm aastat malet õppinud 9–12-aastastele. ${data.PUZZLES.length} ülesannet, vihjed ja treeneri vaade. Töötab ka internetita."><meta name="theme-color" content="#243c2d"><title>Malenurk – iga käik loeb</title><style>${read('style.css')}</style></head><body>
 <div id="app"></div><noscript><p>Malenurk vajab JavaScripti. Luba see brauseri seadetes ja ava fail uuesti.</p></noscript>
 <dialog id="modal" aria-label="Malenurga juhised"><div id="modal-content"></div></dialog>
 <dialog id="promotion" aria-label="Etturi muundamine"><div id="promotion-content"></div></dialog>

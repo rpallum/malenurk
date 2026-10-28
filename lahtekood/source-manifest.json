@@ -1,0 +1,27 @@
+{
+  "retrieved": "2026-10-28",
+  "database": "https://database.lichess.org/#puzzles",
+  "download": "https://database.lichess.org/lichess_db_puzzle.csv.zst",
+  "license": "CC0-1.0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "httpMetadata": {
+    "Last-Modified": "Fri, 02 Oct 2026 08:51:45 GMT",
+    "ETag": "\"6abf70a1-125007eb\"",
+    "Content-Length": "307234795"
+  },
+  "candidateRowsRead": 309348,
+  "sourceRows": 105,
+  "sourceCsvSha256": "b4daed940755084af3e60a5dab5846aa17f9d021e9768bd3aa695e99511bf613",
+  "stockfish": {
+    "version": "19",
+    "release": "https://github.com/official-stockfish/Stockfish/releases/tag/sf_19",
+    "binarySha256": "45bc8e4969147db9c2eb533810637994619bff0eacc81ccfd9854394901bcbd0",
+    "license": "GPL-3.0",
+    "runtimeInPupilBrowser": false
+  },
+  "pythonChess": {
+    "package": "python-chess 1.999 / chess 1.11.2",
+    "license": "GPL-3.0-or-later"
+  },
+  "snapshotReproducibility": "The 105 original CSV records are committed. The public upstream database and its ratings may change; --recheck audits the committed snapshot."
+}

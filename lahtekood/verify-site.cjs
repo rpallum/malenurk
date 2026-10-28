@@ -35,6 +35,8 @@ async function checkPublication(){
   const response=await page.goto(url);assert.equal(response.status(),200);assert.equal(await page.title(),'Malenurk');
   assert.ok((await page.locator('h1').innerText()).replace(/\s+/g,' ').includes('Hea käik algab heast mõttest.'));
   assert.deepEqual(await page.locator('nav button').allTextContents(),['Avaleht','Harjutused','Juhised','Treeneri vaade','Tagasiside']);
+  assert.equal(await page.evaluate(()=>PUZZLES.length),105,'Published puzzle bank size');
+  assert.ok((await page.locator('.statbar').innerText()).includes('105'));
   // Pärast laadimist peavad rakenduse vaated ja malelaud töötama internetita.
   await context.setOffline(true);
   await page.locator('nav [data-action="exercises"]').click();await page.locator('[data-action="start"]').click();

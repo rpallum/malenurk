@@ -40,6 +40,8 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Kontrolli kõiki maleülesandeid
         run: node lahtekood/validate.cjs
+      - name: Kontrolli vigase ülesandepanga avaldamise tõkestamist
+        run: node lahtekood/test-validation.cjs
       - name: Ehita veebileht koos index.html-iga
         run: node lahtekood/build-pages.cjs
       - name: Kontrolli avaldatavat HTML-i brauseris
