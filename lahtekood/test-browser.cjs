@@ -4,7 +4,8 @@ const {PUZZLES}=JSON.parse(fs.readFileSync(path.join(__dirname,'checked-data.jso
 const htmlPath=process.argv[2]?path.resolve(process.argv[2]):path.resolve(__dirname,'../Malenurk.html');
 const checks=[];const passed=n=>{checks.push(n);console.log('PASS',n);};
 (async()=>{
- const browser=await chromium.launch({channel:process.env.MALENURK_BROWSER||'chrome',headless:true,args:['--disable-gpu']});
+ const browserName=process.env.MALENURK_BROWSER||'chrome';
+ const browser=await chromium.launch({channel:browserName==='chromium'?undefined:browserName,headless:true,args:['--disable-gpu']});
  try{
  const context=await browser.newContext({viewport:{width:1366,height:1000},acceptDownloads:true});await context.setOffline(true);const page=await context.newPage();const errors=[];const requests=[];page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>requests.push(r.url()));
  await page.goto(pathToFileURL(htmlPath).href);

@@ -21,7 +21,9 @@ window.Chess=exports.Chess;
 const MALENURK_DATA=${JSON.stringify(data).replace(/</g,'\\u003c')};
 ${read('app.js')}
 </script></body></html>`;
-const output=process.argv[2]?path.resolve(process.argv[2]):path.resolve(dir,'../Malenurk.html');
-fs.mkdirSync(path.dirname(output),{recursive:true});
-fs.writeFileSync(output,html);
-console.log('Built '+output+' · '+Math.round(Buffer.byteLength(html)/1024)+' KB · all dependencies inline.');
+const outputs=process.argv[2]?[path.resolve(process.argv[2])]:[path.resolve(dir,'../Malenurk.html'),path.resolve(dir,'../index.html')];
+for(const output of outputs){
+ fs.mkdirSync(path.dirname(output),{recursive:true});
+ fs.writeFileSync(output,html);
+ console.log('Built '+output+' · '+Math.round(Buffer.byteLength(html)/1024)+' KB · all dependencies inline.');
+}

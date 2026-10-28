@@ -1,0 +1,57 @@
+name: Kontrolli ja avalda Malenurk
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    env:
+      MALENURK_BROWSER: chromium
+    steps:
+      - name: Laadi lähtekood
+        uses: actions/checkout@v6
+      - name: Seadista Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Paigalda brauseritestide sõltuvus
+        run: npm install --no-save --no-package-lock --ignore-scripts --no-audit --no-fund playwright@1.62.1
+      - name: Paigalda testibrauser
+        run: npx playwright install --with-deps chromium
+      - name: Kontrolli kõiki maleülesandeid
+        run: node lahtekood/validate.cjs
+      - name: Ehita veebileht koos index.html-iga
+        run: node lahtekood/build-pages.cjs
+      - name: Kontrolli avaldatavat HTML-i brauseris
+        run: node lahtekood/test-browser.cjs dist/index.html
+      - name: Loe GitHub Pagesi seadistus
+        uses: actions/configure-pages@v5
+      - name: Laadi üles veebilehe failid
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+      - name: Avalda GitHub Pagesis
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Kontrolli avaldatud versiooni ja brauseris toimimist
+        run: node lahtekood/verify-site.cjs https://rpallum.github.io/malenurk/ "$GITHUB_SHA"

@@ -12,7 +12,25 @@ Paigaldamist, serverit, kontot, andmebaasi ega internetiühendust ei ole vaja. K
 
 **Harjutustulemused ja salvestamata muudatused kaovad lehe värskendamisel. Kinnitatud tagasiside taastub samas vahelehes sessionStorage’ist.** Püsiva koopia jaoks laadi kinnitatud hinnang eraldi alla.
 
-## Uus versioon 1.2
+## GitHub Pagesi avaldamine
+
+Soovitud püsiaadress pärast edukat avaldamist on **https://rpallum.github.io/malenurk/**. Hoidla praegune privaatne nähtavus säilib. Privaatse isikliku hoidla GitHub Pages vajab GitHub Pro või muud sobivat paketti; töövoog ei muuda nähtavust ega osta paketti.
+
+`.github/workflows/pages.yml` käivitub iga `main`-haru paranduse järel ja käsitsi GitHub Actionsi vaates. See kasutab Node.js 24 ning ainult testimiseks Playwright 1.62.1/Chromiumit:
+
+1. Kontrollib `node lahtekood/validate.cjs` abil kõik maleülesanded.
+2. Käivitab `node lahtekood/build-pages.cjs`, mis ehitab lähtefailidest `Malenurk.html` ja sellega identse `index.html`-i. Ka tavaline `node lahtekood/build.cjs` uuendab nüüd mõlemat juurkausta HTML-faili.
+3. Kontrollib brauseris just avaldatavat faili: `node lahtekood/test-browser.cjs dist/index.html`.
+4. Loeb olemasoleva Pagesi seadistuse, laadib üles `dist/` ja avaldab paketi `actions/deploy-pages` abil.
+5. Käivitab `node lahtekood/verify-site.cjs https://rpallum.github.io/malenurk/ "$GITHUB_SHA"`: nõuab edukat HTTP-vastust, võrdleb avaldatud commit'i ja HTML-i SHA-256 räsi ning kontrollib brauseris avalehte, õiget malekäiku, tagasisidevormi ja treenerilukku. Veebilehe vanemat versiooni ei loeta õnnestunud avaldamiseks.
+
+Avaldamispakett sisaldab ainult `index.html`, ühilduvuseks ka `Malenurk.html`, `.nojekyll` ja `deployment.json` versioonitõendi. Lähtekoodi, teste ja dokumente veebipaketti ei lisata. Kõik rakenduse sõltuvused on endiselt HTML-is ning kasutajaliides ei vaja võrguühendust pärast laadimist.
+
+Pages peab olema hoidla **Settings → Pages** all lubatud ja avaldamise allikaks peab olema **GitHub Actions**. Praeguse GitHubi ühenduse tööriistad ei toeta `/pages` seadete haldamist; töövoo tavapärane `GITHUB_TOKEN` ei asenda Pagesi esmakordseks aktiveerimiseks vajalikku haldusõigust. Pagesi puudumisel peatub töövoog seadistuse sammus ja selle konkreetne põhjus tuleb lahendada hoidla seadetes. Hoidla privaatseks jätmise nõuet tuleb säilitada.
+
+Edasiste tellitud paranduste jaoks on töökorraldus failis `AGENTS.md`: muuda lähtekoodi, testi, salvesta samasse reposse ja jälgi selle commit'i avaldamist. Avalik veebileht loetakse uuenenuks alles pärast töövoo ja veebiaadressi kontrolli. Brauseris piisab seejärel sama aadressi värskendamisest; HTML-i uuesti alla laadida ei ole vaja.
+
+## Rakenduse versioon 1.2
 
 Säilivad Malenurga kreemikas ja roheline kujundus, logo, kirjatüübid, avalehe pealkiri ning kõik 28 kontrollitud maleülesannet. Ülamenüü sisaldab viit valikut: **Avaleht**, **Harjutused**, **Juhised**, **Treeneri vaade** ja **Tagasiside**. Aktiivne valik on tähistatud; harjutamise ja tulemuste ajal on aktiivne „Harjutused“. Väiksemal ekraanil jaguneb menüü mitmele reale.
 
@@ -160,7 +178,7 @@ Esimene käsk kontrollib sisu ning loob `checked-data.json` ja `validation.json`
 
 6. Ava uus HTML, lahenda uus ülesanne ja lase treeneril vaadata üle sisu ning raskusaste. Automaatkontroll ei asenda pedagoogilist hinnangut ega tõesta seisu ajaloolist päritolu.
 
-Lähtefailid on loetavad ega vaja koodiminimeerimist või npm-pakette tavalise HTML-i ehitamiseks. Brauseritesti kordamiseks on vaja eraldi Playwrighti ja Chrome'i. Soovi korral paigalda lähtekoodikaustas `npm install --no-save playwright`, seejärel käivita paketi juurest `node lahtekood/test-browser.cjs`. Vaikimisi kasutatakse Chrome’i; muu toetatud kanali saab valida keskkonnamuutujaga `MALENURK_BROWSER` (näiteks `msedge`). Test kaasab automaatselt ka `test-features.cjs` ja `test-feedback.cjs`. Tagasiside test kontrollib, et kinnitamine ei käivita allalaadimist ega meiliprogrammi. Brauseritest on praeguse 28 ülesandega versiooni regressioonitest; andmestiku suuruse muutmisel tuleb uuendada ka selle arvulisi ootusi.
+Lähtefailid on loetavad ega vaja koodiminimeerimist või npm-pakette tavalise HTML-i ehitamiseks. Brauseritesti kordamiseks on vaja eraldi Playwrighti ja Chrome'i. Soovi korral paigalda lähtekoodikaustas `npm install --no-save playwright`, seejärel käivita paketi juurest `node lahtekood/test-browser.cjs`. Vaikimisi kasutatakse Chrome’i; muu toetatud kanali saab valida keskkonnamuutujaga `MALENURK_BROWSER` (`msedge` või CI jaoks `chromium`). Test kaasab automaatselt ka `test-features.cjs` ja `test-feedback.cjs`. Tagasiside test kontrollib, et kinnitamine ei käivita allalaadimist ega meiliprogrammi. Brauseritest on praeguse 28 ülesandega versiooni regressioonitest; andmestiku suuruse muutmisel tuleb uuendada ka selle arvulisi ootusi.
 
 ## Raskusastmete põhimõtted
 

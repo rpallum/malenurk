@@ -88,3 +88,9 @@ Avalehe ja harjutusvaate kuvatõmmiseid vaadati üle arvuti-, tahvelarvuti- ja t
 - Puuteekraani kontroll kasutas brauseri puuterežiimi. Füüsilise iPadi või Android-tahvli failihalduri, Safari ning Firefoxiga pole eraldi katset tehtud.
 - Ühtegi õpetaja eksperdihinnangut ega 3–5 õpilasega kasutuskatset ei ole veel läbi viidud. Tagasisidevorm on selleks valmis.
 
+
+## GitHub Pagesi jaoks lisatud ehitus ja kontroll
+
+Tavaline ehitus loob nüüd identsed Malenurk.html ja index.html failid. build-pages.cjs koostab dist-kausta eraldi veebipaketi ning deployment.json sisaldab commit’i ja HTML-i SHA-256 räsi. pages.yml kirjeldab main-haru kontrollimist, ehitamist, brauseriteste ja avaldamist ning verify-site.cjs kontrollib avaldatud versiooni HTTP kaudu ja brauseris.
+
+Avaldamiseks ehitatud dist/index.html läbis kõik 23 brauseritestide kontrollrühma. Kohaliku HTTP-serveri /malenurk/ juuraadress läbis sama versiooni- ja brauserikontrolli: avaleht, malekäik, tagasiside ning treenerilukk. Rakenduse HTML-i sisu ja kujundust ei muudetud. See kohalik kontroll ei tõenda avalikus github.io aadressis avaldamist. Avaldamine nõuab Pagesi lubamist sobiva paketi ja õigustega; hoidla nähtavust ei muudeta.
