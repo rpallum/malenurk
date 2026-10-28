@@ -28,9 +28,9 @@ jobs:
       MALENURK_BROWSER: chromium
     steps:
       - name: Laadi lähtekood
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Seadista Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: '24'
           package-manager-cache: false
@@ -45,15 +45,16 @@ jobs:
       - name: Kontrolli avaldatavat HTML-i brauseris
         run: node lahtekood/test-browser.cjs dist/index.html
       - name: Loe GitHub Pagesi seadistus
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
         with:
           enablement: true
       - name: Laadi üles veebilehe failid
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: dist
+          include-hidden-files: true
       - name: Avalda GitHub Pagesis
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
       - name: Kontrolli avaldatud versiooni ja brauseris toimimist
         run: node lahtekood/verify-site.cjs https://rpallum.github.io/malenurk/ "$GITHUB_SHA"

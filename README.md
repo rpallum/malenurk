@@ -14,7 +14,7 @@ Paigaldamist, serverit, kontot, andmebaasi ega internetiühendust ei ole vaja. K
 
 ## GitHub Pagesi avaldamine
 
-Soovitud püsiaadress pärast edukat avaldamist on **https://rpallum.github.io/malenurk/**. Hoidla praegune privaatne nähtavus säilib. Privaatse isikliku hoidla GitHub Pages vajab GitHub Pro või muud sobivat paketti; töövoog ei muuda nähtavust ega osta paketti.
+Malenurk on avaldatud püsiaadressil **https://rpallum.github.io/malenurk/**. Hoidla on praegu avalik; töövoog ei muuda hoidla nähtavust ega Pagesi toimivat seadistust.
 
 `.github/workflows/pages.yml` käivitub iga `main`-haru paranduse järel ja käsitsi GitHub Actionsi vaates. See kasutab Node.js 24 ning ainult testimiseks Playwright 1.62.1/Chromiumit:
 
@@ -26,9 +26,15 @@ Soovitud püsiaadress pärast edukat avaldamist on **https://rpallum.github.io/m
 
 Avaldamispakett sisaldab ainult `index.html`, ühilduvuseks ka `Malenurk.html`, `.nojekyll` ja `deployment.json` versioonitõendi. Lähtekoodi, teste ja dokumente veebipaketti ei lisata. Kõik rakenduse sõltuvused on endiselt HTML-is ning kasutajaliides ei vaja võrguühendust pärast laadimist.
 
-Pages peab olema hoidla **Settings → Pages** all lubatud ja avaldamise allikaks peab olema **GitHub Actions**. Praeguse GitHubi ühenduse tööriistad ei toeta `/pages` seadete haldamist; töövoo tavapärane `GITHUB_TOKEN` ei asenda Pagesi esmakordseks aktiveerimiseks vajalikku haldusõigust. Pagesi puudumisel peatub töövoog seadistuse sammus ja selle konkreetne põhjus tuleb lahendada hoidla seadetes. Hoidla privaatseks jätmise nõuet tuleb säilitada.
+Pages on hoidla seadetes lubatud ja avaldamise allikas on **GitHub Actions**. Olemasolevad õigused, `github-pages` keskkond, avaldamise kataloog `dist` ja püsiaadress säilivad. Töövoog avaldab ainult kontrollid läbinud versiooni.
 
 Edasiste tellitud paranduste jaoks on töökorraldus failis `AGENTS.md`: muuda lähtekoodi, testi, salvesta samasse reposse ja jälgi selle commit'i avaldamist. Avalik veebileht loetakse uuenenuks alles pärast töövoo ja veebiaadressi kontrolli. Brauseris piisab seejärel sama aadressi värskendamisest; HTML-i uuesti alla laadida ei ole vaja.
+
+### Avaldamise komponentide uuendus, 28.10.2026
+
+Viimase eduka avaldamise logis olid Node.js 20 aegumise hoiatus ning `punycode` ja `url.parse()` deprecation-teated. Need tulid GitHub Actionsi komponentidest, mitte Malenurga rakenduse koodist. Töövoog kasutab nüüd ametlikke Node.js 24 versioone: `checkout@v7`, `setup-node@v7`, `configure-pages@v6` ja `deploy-pages@v5`. `upload-pages-artifact@v5` kasutab sisemiselt `upload-artifact@v7`. Uue pakkija `include-hidden-files: true` säilitab teadlikult kaasatud `.nojekyll`-faili.
+
+Pärast iga parandust tuleb käivitada kontrollid ja ehitus, salvestada muudatused main-harusse, oodata avaldamise lõppu, vaadata üle hoiatused ning kontrollida sama veebiaadressi ja uue commit’i vastavust. See töökorraldus on ka failis `AGENTS.md`.
 
 ## Rakenduse versioon 1.2
 
